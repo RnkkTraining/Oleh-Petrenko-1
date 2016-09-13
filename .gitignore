@@ -4,3 +4,11 @@
 
 /SortApp/SortApp.Presentation/obj/Debug
 /SortApp/SortApp.Presentation/bin/Debug
+/SortApp/SortApp.BL/obj/Debug
+/SortApp/SortApp.BL.Test/obj/Debug
+/SortApp/SortApp.ViewModel/obj/Debug
+/SortApp/SortApp.ViewModel.Test/obj/Debug
+/SortApp/SortApp.ViewModel.Test/bin/Debug
+/SortApp/SortApp.ViewModel/bin/Debug
+/SortApp/SortApp.BL.Test/bin/Debug
+/SortApp/SortApp.BL/bin/Debug
