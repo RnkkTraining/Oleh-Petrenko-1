@@ -8,22 +8,22 @@ namespace SortApp.ViewModel
     /// Represents the view model base as parent for all view model.
     /// </summary>
     /// <owner>Oleh Petrenko</owner>
-    public class ViewModelBase : INotifyPropertyChanged
+    public abstract class ViewModelBase : INotifyPropertyChanged
     {
         /// <summary>
         /// Update property.
         /// </summary>
         /// <owner>Oleh Petrenko</owner>
-        /// <value>
+        /// <param>
         /// The property name which will be updated.
-        /// </value>
+        /// </param>
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>
-        /// Represents the view model base as parent for all view model.
+        /// Call when property was changed.
         /// </summary>
         /// <owner>Oleh Petrenko</owner>
         public event PropertyChangedEventHandler PropertyChanged;

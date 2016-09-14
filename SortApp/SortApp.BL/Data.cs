@@ -14,21 +14,16 @@ namespace SortApp.BL
     public sealed class Data
     {
         /// <summary>
-        /// Gets or sets the original incoming array.
-        /// </summary>
-        /// <owner>Oleh Petrenko</owner>
-        /// <value>
-        /// The incoming array.
-        /// </value>
-        private ArrayList IncomingArray { get; set; }
-
-        /// <summary>
         /// Gets or sets the original array as string.
         /// </summary>
         /// <owner>Oleh Petrenko</owner>
         /// <value>
         /// The incoming array as string.
         /// </value>
-        public string OriginalData { get; set; }
+        public string OriginalData
+        {
+            get;
+            set;
+        }
     }
 }

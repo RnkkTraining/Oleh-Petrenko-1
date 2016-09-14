@@ -21,7 +21,11 @@ namespace SortApp.ViewModel
         /// <value>
         /// The model for object Data.
         /// </value>
-        public Data Data { get; set; }
+        public Data Data
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Gets or sets all sorting iterations.
@@ -30,7 +34,11 @@ namespace SortApp.ViewModel
         /// <value>
         /// The dictionary with sorting iteratons.
         /// </value>
-        public Dictionary<int, string> Iterations { get; set; }
+        public Dictionary<int, string> Iterations
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
@@ -38,7 +46,7 @@ namespace SortApp.ViewModel
         /// <owner>Oleh Petrenko</owner>
         public MainWindowViewModel()
         {
-            Data = new Data();
+            this.Data = new Data();
         }
 
         /// <summary>
@@ -52,13 +60,12 @@ namespace SortApp.ViewModel
         {
             get
             {
-                return Data.OriginalData;
-                
+                return this.Data.OriginalData;
             }
             set
             {
-                Data.OriginalData = value;
-                OnPropertyChanged(nameof(this.OriginalData));
+                this.Data.OriginalData = value;
+                OnPropertyChanged();
             }
         }
     }

@@ -7,15 +7,16 @@ namespace SortApp.Presentation
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+    /// <owner>Oleh Petrenko</owner>
     public partial class App : Application
     {
         /// <summary>
-        /// Sets the data context for MainWindow.
+        /// Starts application by opening its main window.
         /// </summary>
         /// <owner>Oleh Petrenko</owner>
         public App()
         {
-            var mw = new SortApp.Presentation.MainWindow
+            MainWindow mw = new MainWindow
             {
                 DataContext = new MainWindowViewModel()
             };
