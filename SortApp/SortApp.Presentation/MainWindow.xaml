@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SortApp.Presentation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="SortApp" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Input array" Grid.Row="0"/>
+        <TextBox Grid.Row="1" Margin="5" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Text="{Binding Path=OriginalData, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </Window>
