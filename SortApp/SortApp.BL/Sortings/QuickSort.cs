@@ -35,6 +35,11 @@ namespace SortApp.BL.Sortings
 		/// </param>
 		private void QuickSortAlgorithm(T[] arr, int l, int r)
 		{
+			if (arr.Length == 0)
+			{
+				return;
+			}
+
 			int i, j;
 			i = l;
 			j = r;
