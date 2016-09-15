@@ -64,9 +64,9 @@ namespace SortApp.BL.Sortings
 			} while (i < j);
 
 			if (i < r)
-				QuickSortAlgorithm(arr, i, r);
+				this.QuickSortAlgorithm(arr, i, r);
 			if (j > l)
-				QuickSortAlgorithm(arr, l, j);
+				this.QuickSortAlgorithm(arr, l, j);
 		}
 	}
 }
