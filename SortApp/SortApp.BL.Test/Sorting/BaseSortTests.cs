@@ -18,7 +18,7 @@ namespace SortApp.BL.Test.Sorting
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		[TestMethod]
-		public void SortEmptyArray()
+		public void SortEmptyArrayTest()
 		{
 			int[] originalArray = { };
 			int[] expectedArray = { };
@@ -34,10 +34,27 @@ namespace SortApp.BL.Test.Sorting
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		[TestMethod]
-		public void SortFilledArray()
+		public void SortFilledArrayTest()
 		{
 			int[] originalArray = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
 			int[] expectedArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+			Sorter<int> sorter = this.CreateSorter();
+			sorter.Sort(originalArray);
+
+			CollectionAssert.AreEqual(expectedArray, originalArray);
+		}
+
+		/// <summary>
+		/// Performs a base logic for test towards the logics of sorting algorithm when incoming array is null.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		[TestMethod]
+		[ExpectedException(typeof(NullReferenceException))]
+		public void SortNullArrayTest()
+		{
+			int[] originalArray = null;
+			int[] expectedArray = { };
 
 			Sorter<int> sorter = this.CreateSorter();
 			sorter.Sort(originalArray);
