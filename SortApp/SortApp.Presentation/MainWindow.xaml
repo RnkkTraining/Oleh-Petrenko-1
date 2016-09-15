@@ -20,7 +20,8 @@
             </MenuItem>
         </Menu>
         <Label x:Name="InputArrayLabel" Content="Input array" Grid.Row="1"/>
-        <TextBox x:Name="OriginalDataTextBox" Grid.Row="2" Margin="5" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Text="{Binding Path=OriginalData, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="OriginalDataTextBox" Grid.Row="2" Margin="5" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" 
+                 Text="{Binding Path=OriginalData, UpdateSourceTrigger=PropertyChanged}"/>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>

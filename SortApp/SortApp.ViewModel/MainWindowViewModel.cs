@@ -65,7 +65,7 @@ namespace SortApp.ViewModel
 			set
 			{
 				this.Data.OriginalData = value;
-				OnPropertyChanged();
+				this.OnPropertyChanged();
 			}
 		}
 	}

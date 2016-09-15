@@ -5,7 +5,7 @@ using SortApp.ViewModel;
 namespace SortApp.Presentation
 {
 	/// <summary>
-	/// Interaction logic for App.xaml
+	/// Interaction logic for App.xaml.
 	/// </summary>
 	/// <owner>Oleh Petrenko</owner>
 	public partial class App : Application

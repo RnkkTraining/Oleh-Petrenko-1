@@ -2,36 +2,39 @@
 
 namespace SortApp.BL.Sortings
 {
-    /// <summary>
-    /// Abstact for sorting
-    /// </summary>
-    /// <owner>Oleh Petrenko</owner>
-    public abstract class Sorter<T> where T : IComparable<T>
-    {
-        /// <summary>
-        /// Implementing sorting algorithm
-        /// </summary>
-        /// <owner>Oleh Petrenko</owner>
-        /// <param>
-        /// Incoming array for sorting
-        /// </param>
-        public abstract void Sort(T[] arr);
+	/// <summary>
+	/// Base class for sorting algorithms.
+	/// </summary>
+	/// <owner>Oleh Petrenko</owner>
+	public abstract class Sorter<T> where T : IComparable<T>
+	{
+		/// <summary>
+		/// Implementing sorting algorithm.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <param>
+		/// Incoming array for sorting.
+		/// </param>
+		public abstract void Sort(T[] arr);
 
-        /// <summary>
-        /// Swap two elements
-        /// </summary>
-        /// <owner>Oleh Petrenko</owner>
-        /// <param name="item1">
-        /// First element for swap
-        /// </param>
-        /// <param name="item2">
-        /// Secend element for swap
-        /// </param>
-        protected void Swap(ref T item1, ref T item2)
-        {
-            T tmp = item1;
-            item1 = item2;
-            item2 = tmp;
-        }
-    }
+		/// <summary>
+		/// Swap two elements.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <param name="arr">
+		/// Array for swap elements.
+		/// </param>
+		/// <param name="firstIndex">
+		/// Index of first element for swap.
+		/// </param>
+		/// <param name="secondIndex">
+		/// Index of second element for swap.
+		/// </param>
+		protected void Swap(T[] arr, int firstIndex, int secondIndex)
+		{
+			T tmp = arr[firstIndex];
+			arr[firstIndex] = arr[secondIndex];
+			arr[secondIndex] = tmp;
+		}
+	}
 }
