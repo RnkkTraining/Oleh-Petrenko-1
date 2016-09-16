@@ -31,7 +31,8 @@ namespace SortApp.BL
 		/// <param name="itemConverter">
 		/// Concrete implementations of items converter.
 		/// </param>
-		public string Sort<T>(string incomingArr, Sorter<T> sorter, IArrayGenerator<T> arrayGenerator, ISortItemsCoverter<T> itemConverter) where T : IComparable<T>
+		public string Sort<T>(string incomingArr, Sorter<T> sorter, IArrayGenerator<T> arrayGenerator, 
+			ISortItemsCoverter<T> itemConverter) where T : IComparable<T>
 		{
 			StringBuilder result = new StringBuilder(incomingArr.Length);
 
