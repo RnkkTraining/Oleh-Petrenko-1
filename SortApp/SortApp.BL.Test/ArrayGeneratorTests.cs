@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SortApp.BL.ArrayGenerators;
 using SortApp.BL.ItemsConvertors;
+using SortApp.BL.ItemsConvertors.Fakes;
 
 namespace SortApp.BL.Test
 {
@@ -22,7 +23,11 @@ namespace SortApp.BL.Test
 			string incoming = string.Empty;
 			int[] expected = { };
 
-			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt<int>();
+			StubISortItemsCoverter<int> itemsCoverter = new StubISortItemsCoverter<int>
+			{
+				ConvertString = s => Convert.ToInt32(s)
+			};
+
 			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>();
 
 			int[] result = arrayGenerator.GenerateFromString(incoming, itemsCoverter);
@@ -40,7 +45,11 @@ namespace SortApp.BL.Test
 			string incoming = "0 1 2 3 4 5 6 7 8 9";
 			int[] expected = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt<int>();
+			StubISortItemsCoverter<int> itemsCoverter = new StubISortItemsCoverter<int>
+			{
+				ConvertString = s => Convert.ToInt32(s)
+			};
+
 			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>();
 
 			int[] result = arrayGenerator.GenerateFromString(incoming, itemsCoverter);
@@ -59,7 +68,11 @@ namespace SortApp.BL.Test
 			string incoming = null;
 			int[] expected = { };
 
-			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt<int>();
+			StubISortItemsCoverter<int> itemsCoverter = new StubISortItemsCoverter<int>
+			{
+				ConvertString = s => Convert.ToInt32(s)
+			};
+
 			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>();
 
 			int[] result = arrayGenerator.GenerateFromString(incoming, itemsCoverter);

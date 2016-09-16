@@ -13,7 +13,7 @@ namespace SortApp.BL
 	/// Represents the main logic towards sort engine.
 	/// </summary>
 	/// <owner>Oleh Petrenko</owner>
-	public sealed class SortEngine
+	public sealed class SortEngine<T> where T : IComparable<T>
 	{
 		/// <summary>
 		/// Takes incoming array as string and returns sorted array as string.
@@ -31,12 +31,13 @@ namespace SortApp.BL
 		/// <param name="itemConverter">
 		/// Concrete implementations of items converter.
 		/// </param>
-		public string Sort<T>(string incomingArr, Sorter<T> sorter, IArrayGenerator<T> arrayGenerator, 
-			ISortItemsCoverter<T> itemConverter) where T : IComparable<T>
+		public string Sort(string incomingArr, Sorter<T> sorter, IArrayGenerator<T> arrayGenerator, 
+			ISortItemsCoverter<T> itemConverter)
 		{
 			StringBuilder result = new StringBuilder(incomingArr.Length);
 
 			T[] array = arrayGenerator.GenerateFromString(incomingArr, itemConverter);
+
 			sorter.Sort(array);
 
 			foreach (var item in array)
