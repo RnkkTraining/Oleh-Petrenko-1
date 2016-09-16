@@ -50,6 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ArrayGeneratorTests.cs" />
+    <Compile Include="ConverterStringToIntTests.cs" />
     <Compile Include="Sorting\BaseSortTests.cs" />
     <Compile Include="Sorting\BubbleSortTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

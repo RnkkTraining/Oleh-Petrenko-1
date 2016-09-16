@@ -4,6 +4,10 @@ using SortApp.BL.Sortings;
 
 namespace SortApp.BL.Test.Sorting
 {
+	/// <summary>
+	/// Represents the base test logic towards the sorting classes.
+	/// </summary>
+	/// <owner>Oleh Petrenko</owner>
 	[TestClass]
 	public abstract class BaseSortTests
 	{
