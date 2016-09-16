@@ -47,6 +47,14 @@ namespace SortApp.ViewModel
 		public MainWindowViewModel()
 		{
 			this.Data = new Data();
+
+			this.SortingAlgorithmSelection = new Dictionary<string, SortingAlgorithmKind>
+			{
+				{"Bubble sort", SortingAlgorithmKind.Bubble},
+				{"Insertin sort", SortingAlgorithmKind.Insertin},
+				{"Selection sort", SortingAlgorithmKind.Selection},
+				{"Quicksort", SortingAlgorithmKind.Quick}
+			};
 		}
 
 		/// <summary>
@@ -67,6 +75,32 @@ namespace SortApp.ViewModel
 				this.Data.OriginalData = value;
 				this.OnPropertyChanged();
 			}
+		}
+
+		/// <summary>
+		/// Gets or sets the selected algorithm.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The selected algorithm as element of enum.
+		/// </value>
+		public SortingAlgorithmKind SelectedAlgorithm
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets key-value pairs with name of algorithm and element of enum.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The key-value pairs with name of algorithm and element of enum.
+		/// </value>
+		public Dictionary<string, SortingAlgorithmKind> SortingAlgorithmSelection
+		{
+			get;
+			set;
 		}
 	}
 }
