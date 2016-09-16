@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SortApp.ViewModel
+namespace SortApp.BL
 {
 	/// <summary>
 	/// Performs enum with kind of sorting algorithms.
