@@ -6,7 +6,7 @@ namespace SortApp.BL.ItemsConvertors
 	/// Represents the implementation for items converter from string to int.
 	/// </summary>
 	/// <owner>Oleh Petrenko</owner>
-	public sealed class ConverterStringToInt<T> : ISortItemsCoverter<int>
+	public sealed class ConverterStringToInt : ISortItemsCoverter<int>
 	{
 		/// <summary>
 		/// Convert incoming value as string to int.

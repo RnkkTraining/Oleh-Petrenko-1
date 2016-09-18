@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using SortApp.BL;
 
 namespace SortApp.ViewModel
@@ -14,14 +15,36 @@ namespace SortApp.ViewModel
 	/// <owner>Oleh Petrenko</owner>
 	public sealed class MainWindowViewModel : ViewModelBase
 	{
-		/// <summary>
-		/// Gets or sets the Data.
-		/// </summary>
-		/// <owner>Oleh Petrenko</owner>
-		/// <value>
-		/// The model for object Data.
-		/// </value>
-		public Data Data
+        /// <summary>
+        /// Gets or sets command for button "Sort".
+        /// </summary>
+        /// <owner>Oleh Petrenko</owner>
+        /// <value>
+        /// Command for button "Sort".
+        /// </value>
+	    public ICommand ClickCommandSort
+	    {
+	        get;
+            set;
+	    }
+
+        /// <summary>
+        /// Click action for button "Sort".
+        /// </summary>
+        /// <owner>Oleh Petrenko</owner>
+        private void ClickMethodSort()
+        {
+            this.ResultSorting = SelectedAlgorithm.ToString();
+        }
+
+        /// <summary>
+        /// Gets or sets the Data.
+        /// </summary>
+        /// <owner>Oleh Petrenko</owner>
+        /// <value>
+        /// The model for object Data.
+        /// </value>
+        public Data Data
 		{
 			get;
 			set;
@@ -47,14 +70,8 @@ namespace SortApp.ViewModel
 		public MainWindowViewModel()
 		{
 			this.Data = new Data();
-
-			this.SortingAlgorithmSelection = new Dictionary<string, SortingAlgorithmKind>
-			{
-				{"Bubble sort", SortingAlgorithmKind.Bubble},
-				{"Insertin sort", SortingAlgorithmKind.Insertin},
-				{"Selection sort", SortingAlgorithmKind.Selection},
-				{"Quicksort", SortingAlgorithmKind.Quick}
-			};
+            this.ClickCommandSort = new Command(arg => ClickMethodSort());
+		    this.SortingAlgorithmSelection = SortingAlgorithmNameAccordanceKindCreator.CreateDictionary();
 		}
 
 		/// <summary>
@@ -76,6 +93,26 @@ namespace SortApp.ViewModel
 				this.OnPropertyChanged();
 			}
 		}
+
+        /// <summary>
+		/// Gets or sets the sorted array as string.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The sorted array as string.
+		/// </value>
+	    public string ResultSorting
+	    {
+            get
+            {
+                return this.Data.SortedData;
+            }
+            set
+            {
+                this.Data.SortedData = value;
+                this.OnPropertyChanged();
+            }
+	    }
 
 		/// <summary>
 		/// Gets or sets the selected algorithm.
@@ -100,7 +137,7 @@ namespace SortApp.ViewModel
 		public Dictionary<string, SortingAlgorithmKind> SortingAlgorithmSelection
 		{
 			get;
-			set;
+			private set;
 		}
 	}
 }

@@ -10,17 +10,29 @@ namespace SortApp.BL.ArrayGenerators
 	/// <owner>Oleh Petrenko</owner>
 	public sealed class ArrayGenerator<T> : IArrayGenerator<T>
 	{
-		/// <summary>
-		/// Generate array from incoming string.
-		/// </summary>
-		/// <owner>Oleh Petrenko</owner>
-		/// <param name="arr">
-		/// Incoming array.
-		/// </param>
-		/// <param name="itemConverter">
-		/// Concrete implementation item converter.
-		/// </param>
-		public T[] GenerateFromString(string arr, ISortItemsCoverter<T> itemConverter)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArrayGenerator{T}"/> class.
+        /// </summary>
+        /// <owner>Oleh Petrenko</owner>
+        /// <param name="itemsConverter">
+        /// Concrete implementations of items converter.
+        /// </param>
+        public ArrayGenerator(ISortItemsCoverter<T> itemsConverter)
+	    {
+	        this.itemsConverter = itemsConverter;
+	    }
+
+        /// <summary>
+        /// Generate array from incoming string.
+        /// </summary>
+        /// <owner>Oleh Petrenko</owner>
+        /// <param name="arr">
+        /// Incoming array.
+        /// </param>
+        /// <param name="itemsConverter">
+        /// Concrete implementation item converter.
+        /// </param>
+        public T[] GenerateFromString(string arr)
 		{
 			if(arr == null)
 				throw new NullReferenceException();
@@ -28,7 +40,13 @@ namespace SortApp.BL.ArrayGenerators
 			if (arr == string.Empty)
 				return new T[] { };
 
-			return arr.Split(' ').Select(itemConverter.Convert).ToArray();
+			return arr.Split(' ').Select(this.itemsConverter.Convert).ToArray();
 		}
-	}
+
+        /// <summary>
+        /// The items converter instance.
+        /// </summary>
+        /// <owner>Oleh Petrenko</owner>
+        private ISortItemsCoverter<T> itemsConverter;
+    }
 }

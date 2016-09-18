@@ -19,6 +19,6 @@ namespace SortApp.BL.ArrayGenerators
 		/// <param name="itemConverter">
 		/// Concrete implementation items converter.
 		/// </param>
-		T[] GenerateFromString(string arr, ISortItemsCoverter<T> itemConverter);
+		T[] GenerateFromString(string arr);
 	}
 }

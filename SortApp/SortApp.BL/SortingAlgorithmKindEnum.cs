@@ -8,9 +8,9 @@ namespace SortApp.BL
 	/// <owner>Oleh Petrenko</owner>
 	public enum SortingAlgorithmKind
 	{
-		Bubble,
-		Insertin,
-		Selection,
-		Quick
+		Bubble = 0,
+		Insertion = 1,
+		Selection = 2,
+		Quick = 3
 	}
 }

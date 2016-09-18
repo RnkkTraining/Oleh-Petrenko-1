@@ -25,5 +25,18 @@ namespace SortApp.BL
 			get;
 			set;
 		}
+
+        /// <summary>
+        /// Gets or sets the sorted array as string.
+        /// </summary>
+        /// <owner>Oleh Petrenko</owner>
+        /// <value>
+        /// The sorted array as string.
+        /// </value>
+        public string SortedData
+        {
+            get;
+            set;
+        }
 	}
 }
