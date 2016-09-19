@@ -5,7 +5,7 @@ using SortApp.BL.ItemsConvertors;
 namespace SortApp.BL.Test
 {
 	/// <summary>
-	/// Represents the tests executed towards the <see cref="ConverterStringToInt{T}"/> sorting class.
+	/// Represents the tests executed towards the <see cref="ConverterStringToInt"/> sorting class.
 	/// </summary>
 	/// <owner>Oleh Petrenko</owner>
 	[TestClass]
@@ -21,7 +21,7 @@ namespace SortApp.BL.Test
 			string incoming = string.Empty;
 			int expected = 0;
 
-			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt<int>();
+			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt();
 			int result = itemsCoverter.Convert(incoming);
 
 			Assert.AreEqual(expected, result);
@@ -38,7 +38,7 @@ namespace SortApp.BL.Test
 			string incoming = null;
 			int expected = 0;
 
-			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt<int>();
+			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt();
 			int result = itemsCoverter.Convert(incoming);
 
 			Assert.AreEqual(expected, result);
@@ -54,7 +54,7 @@ namespace SortApp.BL.Test
 			string incoming = "35";
 			int expected = 35;
 
-			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt<int>();
+			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt();
 			int result = itemsCoverter.Convert(incoming);
 
 			Assert.AreEqual(expected, result);

@@ -1,0 +1,13 @@
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.Data: type is sealed.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.SortEngine`1: type is sealed.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.SorterFactory`1: type is sealed.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.SortingAlgorithmKind: type is a value type.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.Sortings.BubbleSort`1: type is sealed.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.Sortings.InsertionSort`1: type is sealed.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.Sortings.QuickSort`1: type is sealed.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.Sortings.SelectionSort`1: type is sealed.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.ItemsConvertors.ConverterStringToInt: type is sealed.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate stub for SortApp.BL.ArrayGenerators.ArrayGenerator`1: type is sealed.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate shim for SortApp.BL.SortingAlgorithmKind: type is an enum.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate shim for SortApp.BL.ItemsConvertors.ISortItemsCoverter`1: type is an interface.
+C:\Users\oleh.petrenko\Documents\GitHub\Oleh-Petrenko-1\SortApp\SortApp.BL.Test\Fakes\SortApp.BL.fakes : warning : Cannot generate shim for SortApp.BL.ArrayGenerators.IArrayGenerator`1: type is an interface.

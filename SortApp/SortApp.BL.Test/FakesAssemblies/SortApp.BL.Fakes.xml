@@ -16,8 +16,8 @@
         <member name="T:SortApp.BL.ArrayGenerators.Fakes.ShimArrayGenerator`1.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
-        <member name="P:SortApp.BL.ArrayGenerators.Fakes.ShimArrayGenerator`1.AllInstances.GenerateFromStringStringISortItemsCoverterOfT0">
-            <summary>Sets the shim of ArrayGenerator`1.GenerateFromString(String arr, ISortItemsCoverter`1&lt;!0&gt; itemConverter)</summary>
+        <member name="P:SortApp.BL.ArrayGenerators.Fakes.ShimArrayGenerator`1.AllInstances.GenerateFromStringString">
+            <summary>Sets the shim of ArrayGenerator`1.GenerateFromString(String arr)</summary>
         </member>
         <member name="M:SortApp.BL.ArrayGenerators.Fakes.ShimArrayGenerator`1.BehaveAsCurrent">
             <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
@@ -31,11 +31,11 @@
         <member name="M:SortApp.BL.ArrayGenerators.Fakes.ShimArrayGenerator`1.Bind(SortApp.BL.ArrayGenerators.IArrayGenerator{`0})">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
-        <member name="P:SortApp.BL.ArrayGenerators.Fakes.ShimArrayGenerator`1.Constructor">
-            <summary>Sets the shim of ArrayGenerator`1.ArrayGenerator`1()</summary>
+        <member name="P:SortApp.BL.ArrayGenerators.Fakes.ShimArrayGenerator`1.ConstructorISortItemsCoverterOfT0">
+            <summary>Sets the shim of ArrayGenerator`1.ArrayGenerator`1(ISortItemsCoverter`1&lt;!0&gt; itemsConverter)</summary>
         </member>
-        <member name="P:SortApp.BL.ArrayGenerators.Fakes.ShimArrayGenerator`1.GenerateFromStringStringISortItemsCoverterOfT0">
-            <summary>Sets the shim of ArrayGenerator`1.GenerateFromString(String arr, ISortItemsCoverter`1&lt;!0&gt; itemConverter)</summary>
+        <member name="P:SortApp.BL.ArrayGenerators.Fakes.ShimArrayGenerator`1.GenerateFromStringString">
+            <summary>Sets the shim of ArrayGenerator`1.GenerateFromString(String arr)</summary>
         </member>
         <member name="T:SortApp.BL.ArrayGenerators.Fakes.StubIArrayGenerator`1">
             <summary>Stub type of SortApp.BL.ArrayGenerators.IArrayGenerator`1</summary>
@@ -43,11 +43,11 @@
         <member name="M:SortApp.BL.ArrayGenerators.Fakes.StubIArrayGenerator`1.#ctor">
             <summary>Initializes a new instance of type StubIArrayGenerator</summary>
         </member>
-        <member name="F:SortApp.BL.ArrayGenerators.Fakes.StubIArrayGenerator`1.GenerateFromStringStringISortItemsCoverterOfT0">
-            <summary>Sets the stub of IArrayGenerator`1.GenerateFromString(String arr, ISortItemsCoverter`1&lt;!0&gt; itemConverter)</summary>
+        <member name="F:SortApp.BL.ArrayGenerators.Fakes.StubIArrayGenerator`1.GenerateFromStringString">
+            <summary>Sets the stub of IArrayGenerator`1.GenerateFromString(String arr)</summary>
         </member>
-        <member name="M:SortApp.BL.ArrayGenerators.Fakes.StubIArrayGenerator`1.SortApp#BL#ArrayGenerators#IArrayGenerator{T}#GenerateFromString(System.String,SortApp.BL.ItemsConvertors.ISortItemsCoverter{`0})">
-            <summary>Sets the stub of IArrayGenerator`1.GenerateFromString(String arr, ISortItemsCoverter`1&lt;!0&gt; itemConverter)</summary>
+        <member name="M:SortApp.BL.ArrayGenerators.Fakes.StubIArrayGenerator`1.SortApp#BL#ArrayGenerators#IArrayGenerator{T}#GenerateFromString(System.String)">
+            <summary>Sets the stub of IArrayGenerator`1.GenerateFromString(String arr)</summary>
         </member>
         <member name="T:SortApp.BL.Fakes.ShimData">
             <summary>Shim type of SortApp.BL.Data</summary>
@@ -67,6 +67,12 @@
         <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.OriginalDataSetString">
             <summary>Sets the shim of Data.set_OriginalData(String value)</summary>
         </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.SortedDataGet">
+            <summary>Sets the shim of Data.get_SortedData()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.SortedDataSetString">
+            <summary>Sets the shim of Data.set_SortedData(String value)</summary>
+        </member>
         <member name="M:SortApp.BL.Fakes.ShimData.BehaveAsCurrent">
             <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
         </member>
@@ -85,6 +91,12 @@
         <member name="P:SortApp.BL.Fakes.ShimData.OriginalDataSetString">
             <summary>Sets the shim of Data.set_OriginalData(String value)</summary>
         </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.SortedDataGet">
+            <summary>Sets the shim of Data.get_SortedData()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.SortedDataSetString">
+            <summary>Sets the shim of Data.set_SortedData(String value)</summary>
+        </member>
         <member name="T:SortApp.BL.Fakes.ShimSortEngine`1">
             <summary>Shim type of SortApp.BL.SortEngine`1</summary>
         </member>
@@ -97,8 +109,8 @@
         <member name="T:SortApp.BL.Fakes.ShimSortEngine`1.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
-        <member name="P:SortApp.BL.Fakes.ShimSortEngine`1.AllInstances.SortStringSorterOfT0IArrayGeneratorOfT0ISortItemsCoverterOfT0">
-            <summary>Sets the shim of SortEngine`1.Sort(String incomingArr, Sorter`1&lt;!0&gt; sorter, IArrayGenerator`1&lt;!0&gt; arrayGenerator, ISortItemsCoverter`1&lt;!0&gt; itemConverter)</summary>
+        <member name="P:SortApp.BL.Fakes.ShimSortEngine`1.AllInstances.SortStringSorterOfT0">
+            <summary>Sets the shim of SortEngine`1.Sort(String incomingArr, Sorter`1&lt;!0&gt; sorter)</summary>
         </member>
         <member name="M:SortApp.BL.Fakes.ShimSortEngine`1.BehaveAsCurrent">
             <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
@@ -109,44 +121,74 @@
         <member name="P:SortApp.BL.Fakes.ShimSortEngine`1.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:SortApp.BL.Fakes.ShimSortEngine`1.Constructor">
-            <summary>Sets the shim of SortEngine`1.SortEngine`1()</summary>
+        <member name="P:SortApp.BL.Fakes.ShimSortEngine`1.ConstructorIArrayGeneratorOfT0">
+            <summary>Sets the shim of SortEngine`1.SortEngine`1(IArrayGenerator`1&lt;!0&gt; arrayGenerator)</summary>
         </member>
-        <member name="P:SortApp.BL.Fakes.ShimSortEngine`1.SortStringSorterOfT0IArrayGeneratorOfT0ISortItemsCoverterOfT0">
-            <summary>Sets the shim of SortEngine`1.Sort(String incomingArr, Sorter`1&lt;!0&gt; sorter, IArrayGenerator`1&lt;!0&gt; arrayGenerator, ISortItemsCoverter`1&lt;!0&gt; itemConverter)</summary>
+        <member name="P:SortApp.BL.Fakes.ShimSortEngine`1.SortStringSorterOfT0">
+            <summary>Sets the shim of SortEngine`1.Sort(String incomingArr, Sorter`1&lt;!0&gt; sorter)</summary>
         </member>
-        <member name="T:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1">
-            <summary>Shim type of SortApp.BL.ItemsConvertors.ConverterStringToInt`1</summary>
+        <member name="T:SortApp.BL.Fakes.ShimSorterFactory`1">
+            <summary>Shim type of SortApp.BL.SorterFactory`1</summary>
         </member>
-        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.#ctor">
+        <member name="M:SortApp.BL.Fakes.ShimSorterFactory`1.#ctor">
             <summary>Initializes a new shim instance</summary>
         </member>
-        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.#ctor(SortApp.BL.ItemsConvertors.ConverterStringToInt{`0})">
+        <member name="M:SortApp.BL.Fakes.ShimSorterFactory`1.#ctor(SortApp.BL.SorterFactory{`0})">
             <summary>Initializes a new shim for the given instance</summary>
         </member>
-        <member name="T:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.AllInstances">
+        <member name="T:SortApp.BL.Fakes.ShimSorterFactory`1.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
-        <member name="P:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.AllInstances.ConvertString">
-            <summary>Sets the shim of ConverterStringToInt`1.Convert(String value)</summary>
+        <member name="P:SortApp.BL.Fakes.ShimSorterFactory`1.AllInstances.CreateSorterSortingAlgorithmKind">
+            <summary>Sets the shim of SorterFactory`1.CreateSorter(SortingAlgorithmKind algorithmKind)</summary>
         </member>
-        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.BehaveAsCurrent">
+        <member name="M:SortApp.BL.Fakes.ShimSorterFactory`1.BehaveAsCurrent">
             <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.BehaveAsNotImplemented">
+        <member name="M:SortApp.BL.Fakes.ShimSorterFactory`1.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.Behavior">
+        <member name="P:SortApp.BL.Fakes.ShimSorterFactory`1.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.Bind(SortApp.BL.ItemsConvertors.ISortItemsCoverter{System.Int32})">
+        <member name="P:SortApp.BL.Fakes.ShimSorterFactory`1.Constructor">
+            <summary>Sets the shim of SorterFactory`1.SorterFactory`1()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimSorterFactory`1.CreateSorterSortingAlgorithmKind">
+            <summary>Sets the shim of SorterFactory`1.CreateSorter(SortingAlgorithmKind algorithmKind)</summary>
+        </member>
+        <member name="T:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt">
+            <summary>Shim type of SortApp.BL.ItemsConvertors.ConverterStringToInt</summary>
+        </member>
+        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.#ctor(SortApp.BL.ItemsConvertors.ConverterStringToInt)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.AllInstances.ConvertString">
+            <summary>Sets the shim of ConverterStringToInt.Convert(String value)</summary>
+        </member>
+        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.Bind(SortApp.BL.ItemsConvertors.ISortItemsCoverter{System.Int32})">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
-        <member name="P:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.Constructor">
-            <summary>Sets the shim of ConverterStringToInt`1.ConverterStringToInt`1()</summary>
+        <member name="P:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.Constructor">
+            <summary>Sets the shim of ConverterStringToInt.ConverterStringToInt()</summary>
         </member>
-        <member name="P:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt`1.ConvertString">
-            <summary>Sets the shim of ConverterStringToInt`1.Convert(String value)</summary>
+        <member name="P:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt.ConvertString">
+            <summary>Sets the shim of ConverterStringToInt.Convert(String value)</summary>
         </member>
         <member name="T:SortApp.BL.ItemsConvertors.Fakes.StubISortItemsCoverter`1">
             <summary>Stub type of SortApp.BL.ItemsConvertors.ISortItemsCoverter`1</summary>

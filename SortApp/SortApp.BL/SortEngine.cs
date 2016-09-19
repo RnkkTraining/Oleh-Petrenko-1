@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SortApp.BL.ArrayGenerators;
-using SortApp.BL.ItemsConvertors;
 using SortApp.BL.Sortings;
 
 namespace SortApp.BL
@@ -15,33 +14,23 @@ namespace SortApp.BL
 	/// <owner>Oleh Petrenko</owner>
 	public sealed class SortEngine<T> where T : IComparable<T>
 	{
-        /// <summary>
-        /// The array generator instance.
-        /// </summary>
-        /// <owner>Oleh Petrenko</owner>
-	    private IArrayGenerator<T> arrayGenerator;
+		/// <summary>
+		/// The array generator instance.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private IArrayGenerator<T> arrayGenerator;
 
-        /// <summary>
-        /// The items converter instance.
-        /// </summary>
-        /// <owner>Oleh Petrenko</owner>
-	    private ISortItemsCoverter<T> itemsConverter;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SortEngine{T}"/> class.
-        /// </summary>
-        /// <owner>Oleh Petrenko</owner>
-        /// <param name="arrayGenerator">
-        /// Concrete implementations of array generator.
-        /// </param>
-        /// <param name="itemsConverter">
-        /// Concrete implementations of items converter.
-        /// </param>
-        public SortEngine(IArrayGenerator<T> arrayGenerator, ISortItemsCoverter<T> itemsConverter)
-        {
-            this.arrayGenerator = arrayGenerator;
-            this.itemsConverter = itemsConverter;
-        }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="SortEngine{T}"/> class.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <param name="arrayGenerator">
+		/// Concrete implementations of array generator.
+		/// </param>
+		public SortEngine(IArrayGenerator<T> arrayGenerator)
+		{
+			this.arrayGenerator = arrayGenerator;
+		}
 
 		/// <summary>
 		/// Takes incoming array as string and returns sorted array as string.
@@ -55,6 +44,9 @@ namespace SortApp.BL
 		/// </param>
 		public string Sort(string incomingArr, Sorter<T> sorter)
 		{
+			if (incomingArr == null)
+				return string.Empty;
+
 			StringBuilder result = new StringBuilder(incomingArr.Length);
 
 			T[] array = arrayGenerator.GenerateFromString(incomingArr);

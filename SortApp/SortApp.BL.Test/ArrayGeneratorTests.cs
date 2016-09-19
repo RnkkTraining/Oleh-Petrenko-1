@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SortApp.BL.ArrayGenerators;
-using SortApp.BL.ItemsConvertors;
 using SortApp.BL.ItemsConvertors.Fakes;
 
 namespace SortApp.BL.Test
@@ -28,9 +27,9 @@ namespace SortApp.BL.Test
 				ConvertString = s => Convert.ToInt32(s)
 			};
 
-			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>();
+			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>(itemsCoverter);
 
-			int[] result = arrayGenerator.GenerateFromString(incoming, itemsCoverter);
+			int[] result = arrayGenerator.GenerateFromString(incoming);
 
 			CollectionAssert.AreEqual(expected, result);
 		}
@@ -50,9 +49,9 @@ namespace SortApp.BL.Test
 				ConvertString = s => Convert.ToInt32(s)
 			};
 
-			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>();
+			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>(itemsCoverter);
 
-			int[] result = arrayGenerator.GenerateFromString(incoming, itemsCoverter);
+			int[] result = arrayGenerator.GenerateFromString(incoming);
 
 			CollectionAssert.AreEqual(expected, result);
 		}
@@ -73,9 +72,9 @@ namespace SortApp.BL.Test
 				ConvertString = s => Convert.ToInt32(s)
 			};
 
-			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>();
+			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>(itemsCoverter);
 
-			int[] result = arrayGenerator.GenerateFromString(incoming, itemsCoverter);
+			int[] result = arrayGenerator.GenerateFromString(incoming);
 
 			CollectionAssert.AreEqual(expected, result);
 		}
