@@ -157,6 +157,36 @@
         <member name="P:SortApp.BL.Fakes.ShimSorterFactory`1.CreateSorterSortingAlgorithmKind">
             <summary>Sets the shim of SorterFactory`1.CreateSorter(SortingAlgorithmKind algorithmKind)</summary>
         </member>
+        <member name="T:SortApp.BL.Fakes.ShimValidator">
+            <summary>Shim type of SortApp.BL.Validator</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimValidator.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimValidator.#ctor(SortApp.BL.Validator)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:SortApp.BL.Fakes.ShimValidator.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimValidator.AllInstances.IsValidString">
+            <summary>Sets the shim of Validator.IsValid(String incomingData)</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimValidator.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimValidator.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimValidator.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimValidator.Constructor">
+            <summary>Sets the shim of Validator.Validator()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimValidator.IsValidString">
+            <summary>Sets the shim of Validator.IsValid(String incomingData)</summary>
+        </member>
         <member name="T:SortApp.BL.ItemsConvertors.Fakes.ShimConverterStringToInt">
             <summary>Shim type of SortApp.BL.ItemsConvertors.ConverterStringToInt</summary>
         </member>
