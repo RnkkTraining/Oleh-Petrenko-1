@@ -31,6 +31,12 @@ namespace SortApp.ViewModel
 		private readonly SorterFactory<int> SorterFactory;
 
 		/// <summary>
+		/// Contains concrete implementation of validator for incoming string.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly IncomingDataValidator validator;
+
+		/// <summary>
 		/// Gets or sets command for button "Sort".
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
@@ -49,6 +55,10 @@ namespace SortApp.ViewModel
 		/// <owner>Oleh Petrenko</owner>
 		private void ClickMethodSort()
 		{
+			if (!this.validator.IsValid(this.OriginalData))
+				return;
+			//TODO: Implement interaction services (View service).
+
 			Sorter<int> sorter = SorterFactory.CreateSorter(this.SelectedAlgorithm);
 
 			this.ResultSorting = SortEngine.Sort(this.OriginalData, sorter);
@@ -88,6 +98,7 @@ namespace SortApp.ViewModel
 		{
 			this.Data = new Data();
 
+			this.validator = new IncomingDataValidator();
 			this.SortingAlgorithmSelection = SortingAlgorithmNameAccordanceKindCreator.CreateDictionary();
 			this.SortEngine = new SortEngine<int>(new ArrayGenerator<int>(new ConverterStringToInt()));
 			this.SorterFactory = new SorterFactory<int>();

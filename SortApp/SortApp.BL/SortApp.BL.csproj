@@ -54,6 +54,7 @@
     <Compile Include="Sortings\QuickSort.cs" />
     <Compile Include="Sortings\SelectionSort.cs" />
     <Compile Include="Sortings\Sorter.cs" />
+    <Compile Include="IncomingDataValidator.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

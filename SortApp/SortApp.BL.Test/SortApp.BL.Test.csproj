@@ -65,6 +65,7 @@
     <Compile Include="Sorting\InsertionSortTests.cs" />
     <Compile Include="Sorting\QuickSortTests.cs" />
     <Compile Include="Sorting\SelectionSortTests.cs" />
+    <Compile Include="IncomingDataValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SortApp.BL\SortApp.BL.csproj">

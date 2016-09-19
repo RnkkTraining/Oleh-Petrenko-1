@@ -97,6 +97,36 @@
         <member name="P:SortApp.BL.Fakes.ShimData.SortedDataSetString">
             <summary>Sets the shim of Data.set_SortedData(String value)</summary>
         </member>
+        <member name="T:SortApp.BL.Fakes.ShimIncomingDataValidator">
+            <summary>Shim type of SortApp.BL.IncomingDataValidator</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimIncomingDataValidator.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimIncomingDataValidator.#ctor(SortApp.BL.IncomingDataValidator)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:SortApp.BL.Fakes.ShimIncomingDataValidator.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIncomingDataValidator.AllInstances.IsValidString">
+            <summary>Sets the shim of IncomingDataValidator.IsValid(String incomingData)</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimIncomingDataValidator.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimIncomingDataValidator.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIncomingDataValidator.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIncomingDataValidator.Constructor">
+            <summary>Sets the shim of IncomingDataValidator.IncomingDataValidator()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIncomingDataValidator.IsValidString">
+            <summary>Sets the shim of IncomingDataValidator.IsValid(String incomingData)</summary>
+        </member>
         <member name="T:SortApp.BL.Fakes.ShimSortEngine`1">
             <summary>Shim type of SortApp.BL.SortEngine`1</summary>
         </member>
