@@ -18,7 +18,7 @@ namespace SortApp.BL.Sortings
 		public override void Sort(T[] arr)
 		{
 			if (arr == null)
-				throw new NullReferenceException(nameof(arr));
+				throw new ArgumentNullException(nameof(arr));
 
 			for (int i = 0; i < arr.Length; i++)
 			{

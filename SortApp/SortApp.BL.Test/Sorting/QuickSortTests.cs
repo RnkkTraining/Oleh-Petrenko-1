@@ -5,7 +5,7 @@ using SortApp.BL.Sortings;
 namespace SortApp.BL.Test.Sorting
 {
 	/// <summary>
-	/// Represents the tests executed towards the <see cref="SortApp.BL.Sortings.QuickSort{T}"/> sorting class.
+	/// Represents the tests executed towards the <see cref="Sortings.QuickSort{T}"/> sorting class.
 	/// </summary>
 	/// <owner>Oleh Petrenko</owner>
 	[TestClass]

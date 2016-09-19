@@ -4,7 +4,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using SortApp.BL;
+using SortApp.BL.ArrayGenerators;
+using SortApp.BL.ItemsConvertors;
+using SortApp.BL.Sortings;
 
 namespace SortApp.ViewModel
 {
@@ -14,6 +18,42 @@ namespace SortApp.ViewModel
 	/// <owner>Oleh Petrenko</owner>
 	public sealed class MainWindowViewModel : ViewModelBase
 	{
+		/// <summary>
+		/// Contains SortEngine object.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly SortEngine<int> SortEngine;
+
+		/// <summary>
+		/// Contains concrete implementation of sorter factory.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly SorterFactory<int> SorterFactory;
+
+		/// <summary>
+		/// Gets or sets command for button "Sort".
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// Command for button "Sort".
+		/// </value>
+		public ICommand ClickCommandSort
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Click action for button "Sort".
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private void ClickMethodSort()
+		{
+			Sorter<int> sorter = SorterFactory.CreateSorter(this.SelectedAlgorithm);
+
+			this.ResultSorting = SortEngine.Sort(this.OriginalData, sorter);
+		}
+
 		/// <summary>
 		/// Gets or sets the Data.
 		/// </summary>
@@ -47,6 +87,12 @@ namespace SortApp.ViewModel
 		public MainWindowViewModel()
 		{
 			this.Data = new Data();
+
+			this.SortingAlgorithmSelection = SortingAlgorithmNameAccordanceKindCreator.CreateDictionary();
+			this.SortEngine = new SortEngine<int>(new ArrayGenerator<int>(new ConverterStringToInt()));
+			this.SorterFactory = new SorterFactory<int>();
+
+			this.ClickCommandSort = new Command(this.ClickMethodSort);
 		}
 
 		/// <summary>
@@ -67,6 +113,52 @@ namespace SortApp.ViewModel
 				this.Data.OriginalData = value;
 				this.OnPropertyChanged();
 			}
+		}
+
+		/// <summary>
+		/// Gets or sets the sorted array as string.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The sorted array as string.
+		/// </value>
+		public string ResultSorting
+		{
+			get
+			{
+				return this.Data.SortedData;
+			}
+			private set
+			{
+				this.Data.SortedData = value;
+				this.OnPropertyChanged();
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the selected algorithm.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The selected algorithm as element of enum.
+		/// </value>
+		public SortingAlgorithmKind SelectedAlgorithm
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets key-value pairs with name of algorithm and element of enum.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The key-value pairs with name of algorithm and element of enum.
+		/// </value>
+		public Dictionary<string, SortingAlgorithmKind> SortingAlgorithmSelection
+		{
+			get;
+			private set;
 		}
 	}
 }
