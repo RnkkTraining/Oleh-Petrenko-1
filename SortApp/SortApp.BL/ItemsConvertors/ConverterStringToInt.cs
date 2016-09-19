@@ -18,7 +18,7 @@ namespace SortApp.BL.ItemsConvertors
 		public int Convert(string value)
 		{
 			if (value == null)
-				throw new NullReferenceException();
+				throw new ArgumentNullException();
 
 			return value == string.Empty ? 0 : System.Convert.ToInt32(value);
 		}

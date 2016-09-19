@@ -54,16 +54,13 @@ namespace SortApp.BL.Test.Sorting
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		[TestMethod]
-		[ExpectedException(typeof(NullReferenceException))]
+		[ExpectedException(typeof(ArgumentNullException))]
 		public void SortNullArrayTest()
 		{
 			int[] originalArray = null;
-			int[] expectedArray = { };
 
 			Sorter<int> sorter = this.CreateSorter();
 			sorter.Sort(originalArray);
-
-			CollectionAssert.AreEqual(expectedArray, originalArray);
 		}
 	}
 }

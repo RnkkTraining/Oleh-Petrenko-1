@@ -11,6 +11,12 @@ namespace SortApp.BL.ArrayGenerators
 	public sealed class ArrayGenerator<T> : IArrayGenerator<T>
 	{
 		/// <summary>
+		/// The items converter instance.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly ISortItemsCoverter<T> itemsConverter;
+
+		/// <summary>
 		/// Initializes a new instance of the <see cref="ArrayGenerator{T}"/> class.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
@@ -39,11 +45,5 @@ namespace SortApp.BL.ArrayGenerators
 
 			return arr.Split(' ').Select(this.itemsConverter.Convert).ToArray();
 		}
-
-		/// <summary>
-		/// The items converter instance.
-		/// </summary>
-		/// <owner>Oleh Petrenko</owner>
-		private ISortItemsCoverter<T> itemsConverter;
 	}
 }

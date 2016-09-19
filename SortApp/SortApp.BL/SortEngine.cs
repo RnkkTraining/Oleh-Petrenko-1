@@ -53,7 +53,7 @@ namespace SortApp.BL
 
 			sorter.Sort(array);
 
-			foreach (var item in array)
+			foreach (T item in array)
 			{
 				result.Append($"{item} ");
 			}

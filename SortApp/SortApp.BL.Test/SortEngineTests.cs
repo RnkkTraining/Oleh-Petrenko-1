@@ -42,7 +42,7 @@ namespace SortApp.BL.Test
 		{
 			string incoming = null;
 			string expected = string.Empty;
-			
+
 			SortEngine<int> sortEngine = new SortEngine<int>(new StubIArrayGenerator<int>());
 			string result = sortEngine.Sort(incoming, new StubSorter<int>());
 

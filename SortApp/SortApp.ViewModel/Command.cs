@@ -10,6 +10,12 @@ namespace SortApp.ViewModel
 	public sealed class Command : ICommand
 	{
 		/// <summary>
+		/// Contains reference to executing method.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		public delegate void ActionDelegate();
+
+		/// <summary>
 		/// Checking for will able delegate be executed.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
@@ -56,7 +62,7 @@ namespace SortApp.ViewModel
 		/// <param name="action">
 		/// Delegate for command.
 		/// </param>
-		public Command(Action<object> action)
+		public Command(ActionDelegate action)
 		{
 			this.ExecuteDelegate = action;
 		}
@@ -70,7 +76,7 @@ namespace SortApp.ViewModel
 		/// </param>
 		public void Execute(object parameter)
 		{
-			this.ExecuteDelegate?.Invoke(parameter);
+			this.ExecuteDelegate?.Invoke();
 		}
 
 		/// <summary>
@@ -80,7 +86,7 @@ namespace SortApp.ViewModel
 		/// <value>
 		/// Action for execution.
 		/// </value>
-		public Action<object> ExecuteDelegate
+		public ActionDelegate ExecuteDelegate
 		{
 			get;
 			set;

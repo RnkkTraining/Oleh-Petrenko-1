@@ -19,6 +19,18 @@ namespace SortApp.ViewModel
 	public sealed class MainWindowViewModel : ViewModelBase
 	{
 		/// <summary>
+		/// Contains SortEngine object.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly SortEngine<int> SortEngine;
+
+		/// <summary>
+		/// Contains concrete implementation of sorter factory.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly SorterFactory<int> SorterFactory;
+
+		/// <summary>
 		/// Gets or sets command for button "Sort".
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
@@ -80,7 +92,7 @@ namespace SortApp.ViewModel
 			this.SortEngine = new SortEngine<int>(new ArrayGenerator<int>(new ConverterStringToInt()));
 			this.SorterFactory = new SorterFactory<int>();
 
-			this.ClickCommandSort = new Command(arg => ClickMethodSort());
+			this.ClickCommandSort = new Command(this.ClickMethodSort);
 		}
 
 		/// <summary>
@@ -116,7 +128,7 @@ namespace SortApp.ViewModel
 			{
 				return this.Data.SortedData;
 			}
-			set
+			private set
 			{
 				this.Data.SortedData = value;
 				this.OnPropertyChanged();
@@ -135,18 +147,6 @@ namespace SortApp.ViewModel
 			get;
 			set;
 		}
-
-		/// <summary>
-		/// Contains SortEngine object.
-		/// </summary>
-		/// <owner>Oleh Petrenko</owner>
-		private readonly SortEngine<int> SortEngine;
-
-		/// <summary>
-		/// Contains concrete implementation of sorter factory.
-		/// </summary>
-		/// <owner>Oleh Petrenko</owner>
-		private readonly SorterFactory<int> SorterFactory;
 
 		/// <summary>
 		/// Gets or sets key-value pairs with name of algorithm and element of enum.

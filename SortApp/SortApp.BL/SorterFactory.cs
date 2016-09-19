@@ -18,16 +18,19 @@ namespace SortApp.BL
 		/// </param>
 		public Sorter<T> CreateSorter(SortingAlgorithmKind algorithmKind)
 		{
-			if (algorithmKind == SortingAlgorithmKind.Bubble)
-				return new BubbleSort<T>();
-			if (algorithmKind == SortingAlgorithmKind.Insertion)
-				return new InsertionSort<T>();
-			if (algorithmKind == SortingAlgorithmKind.Selection)
-				return new SelectionSort<T>();
-			if (algorithmKind == SortingAlgorithmKind.Quick)
-				return new QuickSort<T>();
+			switch (algorithmKind)
+			{
+				case SortingAlgorithmKind.Bubble:
+					return new BubbleSort<T>();
+				case SortingAlgorithmKind.Insertion:
+					return new InsertionSort<T>();
+				case SortingAlgorithmKind.Selection:
+					return new SelectionSort<T>();
+				case SortingAlgorithmKind.Quick:
+					return new QuickSort<T>();
+			}
 
-			return new InsertionSort<T>();
+			throw new NotSupportedException();
 		}
 	}
 }

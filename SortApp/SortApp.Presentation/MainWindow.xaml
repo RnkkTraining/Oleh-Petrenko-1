@@ -42,7 +42,7 @@
             </Grid.ColumnDefinitions>
             <Label x:Name="ResultLabel" Content="Result:" Margin="0 5 5 0" Grid.Column="0"/>
             <TextBox x:Name="ResultTextBox" Margin="0 5 5 0" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Center"
-                     TextWrapping="Wrap" Grid.Column="1" Text="{Binding Path=ResultSorting, UpdateSourceTrigger=PropertyChanged}"/>
+                     TextWrapping="Wrap" Grid.Column="1" Text="{Binding Path=ResultSorting, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </Grid>
 </Window>

@@ -32,16 +32,13 @@ namespace SortApp.BL.Test
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		[TestMethod]
-		[ExpectedException(typeof(NullReferenceException))]
+		[ExpectedException(typeof(ArgumentNullException))]
 		public void ConvertNullToIntTest()
 		{
 			string incoming = null;
-			int expected = 0;
 
 			ISortItemsCoverter<int> itemsCoverter = new ConverterStringToInt();
 			int result = itemsCoverter.Convert(incoming);
-
-			Assert.AreEqual(expected, result);
 		}
 
 		/// <summary>

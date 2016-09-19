@@ -65,7 +65,6 @@ namespace SortApp.BL.Test
 		public void ArrayGeneratorNullTest()
 		{
 			string incoming = null;
-			int[] expected = { };
 
 			StubISortItemsCoverter<int> itemsCoverter = new StubISortItemsCoverter<int>
 			{
@@ -75,8 +74,6 @@ namespace SortApp.BL.Test
 			IArrayGenerator<int> arrayGenerator = new ArrayGenerator<int>(itemsCoverter);
 
 			int[] result = arrayGenerator.GenerateFromString(incoming);
-
-			CollectionAssert.AreEqual(expected, result);
 		}
 	}
 }
