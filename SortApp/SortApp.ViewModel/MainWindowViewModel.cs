@@ -23,19 +23,19 @@ namespace SortApp.ViewModel
 		/// Contains SortEngine object.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
-		private readonly SortEngine<int> SortEngine;
+		private readonly SortEngine<int> sortEngine;
 
 		/// <summary>
 		/// Contains concrete implementation of sorter factory.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
-		private readonly SorterFactory<int> SorterFactory;
+		private readonly SorterFactory<int> sorterFactory;
 
 		/// <summary>
 		/// Contains concrete implementation of messagebox provider.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
-		private readonly IMessageBoxProvider MessageBoxProvider;
+		private readonly IMessageBoxProvider messageBoxProvider;
 
 		/// <summary>
 		/// Contains concrete implementation of validator for incoming string.
@@ -47,7 +47,7 @@ namespace SortApp.ViewModel
 		/// Contains concrete implementation of windowclose service.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
-		private readonly IWindowCloseService WindowCloseService;
+		private readonly IWindowCloseService windowCloseService;
 
 		/// <summary>
 		/// Gets or sets command for button "Close".
@@ -94,8 +94,8 @@ namespace SortApp.ViewModel
 		/// <owner>Oleh Petrenko</owner>
 		private void ClickMethodClose()
 		{
-			if (this.MessageBoxProvider.ShowMessage("Do you want to close application?", "Close", MessageBoxButtons.OKCancel))
-				this.WindowCloseService.Close();
+			if (this.messageBoxProvider.ShowMessage("Do you want to close application?", "Close", MessageBoxButtons.OKCancel))
+				this.windowCloseService.Close();
 		}
 
 		/// <summary>
@@ -106,7 +106,7 @@ namespace SortApp.ViewModel
 		{
 			string helpFile = FileReader.ReadToString(@"../../../files/help.txt");
 
-			this.MessageBoxProvider.ShowMessage(helpFile, "Exception", MessageBoxButtons.OK);
+			this.messageBoxProvider.ShowMessage(helpFile, "Help", MessageBoxButtons.OK);
 		}
 
 		/// <summary>
@@ -117,13 +117,13 @@ namespace SortApp.ViewModel
 		{
 			if (!this.validator.IsValid(this.OriginalData))
 			{
-				this.MessageBoxProvider.ShowMessage("Incoming array is invalid", "Exception", MessageBoxButtons.OK);
+				this.messageBoxProvider.ShowMessage("Incoming array is invalid", "Exception", MessageBoxButtons.OK);
 				return;
 			}
 
-			Sorter<int> sorter = SorterFactory.CreateSorter(this.SelectedAlgorithm);
+			Sorter<int> sorter = sorterFactory.CreateSorter(this.SelectedAlgorithm);
 
-			this.ResultSorting = SortEngine.Sort(this.OriginalData, sorter);
+			this.ResultSorting = sortEngine.Sort(this.OriginalData, sorter);
 		}
 
 		/// <summary>
@@ -158,15 +158,15 @@ namespace SortApp.ViewModel
 		/// <owner>Oleh Petrenko</owner>
 		public MainWindowViewModel(IMessageBoxProvider messageBoxProvider, IWindowCloseService windowCloseService)
 		{
-			this.WindowCloseService = windowCloseService;
-			this.MessageBoxProvider = messageBoxProvider;
+			this.windowCloseService = windowCloseService;
+			this.messageBoxProvider = messageBoxProvider;
 
 			this.Data = new Data();
 
 			this.validator = new IncomingDataValidator();
 			this.SortingAlgorithmSelection = SortingAlgorithmNameAccordanceKindCreator.CreateDictionary();
-			this.SortEngine = new SortEngine<int>(new ArrayGenerator<int>(new ConverterStringToInt()));
-			this.SorterFactory = new SorterFactory<int>();
+			this.sortEngine = new SortEngine<int>(new ArrayGenerator<int>(new ConverterStringToInt()));
+			this.sorterFactory = new SorterFactory<int>();
 
 			this.ClickCommandClose = new Command(this.ClickMethodClose);
 			this.ClickCommandHelp = new Command(this.ClickMethodHelp);
