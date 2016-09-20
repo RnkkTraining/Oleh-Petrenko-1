@@ -43,6 +43,7 @@
     <Compile Include="Data.cs" />
     <Compile Include="ArrayGenerators\ArrayGenerator.cs" />
     <Compile Include="ArrayGenerators\IArrayGenerator.cs" />
+    <Compile Include="FileReader.cs" />
     <Compile Include="ItemsConvertors\ConverterStringToInt.cs" />
     <Compile Include="ItemsConvertors\ISortItemsCoverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

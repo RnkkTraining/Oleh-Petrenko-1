@@ -18,7 +18,7 @@ namespace SortApp.Presentation
 		{
 			MainWindow mw = new MainWindow
 			{
-				DataContext = new MainWindowViewModel()
+				DataContext = new MainWindowViewModel(new MessageBoxProvider(), new WindowCloseService())
 			};
 
 			mw.Show();
