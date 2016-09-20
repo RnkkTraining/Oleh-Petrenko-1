@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortApp.BL
 {
@@ -13,6 +9,19 @@ namespace SortApp.BL
 	/// <owner>Oleh Petrenko</owner>
 	public sealed class Data
 	{
+		/// <summary>
+		/// Gets or sets the list which contains all iterations.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// Dictionary which contains all iterations.
+		/// </value>
+		public List<Iteration> Iterations
+		{
+			get;
+			set;
+		}
+
 		/// <summary>
 		/// Gets or sets the original array as string.
 		/// </summary>

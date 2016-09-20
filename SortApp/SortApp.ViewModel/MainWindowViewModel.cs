@@ -124,6 +124,7 @@ namespace SortApp.ViewModel
 			Sorter<int> sorter = sorterFactory.CreateSorter(this.SelectedAlgorithm);
 
 			this.ResultSorting = sortEngine.Sort(this.OriginalData, sorter);
+			this.Iterations = sorter.Iterations;
 		}
 
 		/// <summary>
@@ -144,12 +145,19 @@ namespace SortApp.ViewModel
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		/// <value>
-		/// The dictionary with sorting iteratons.
+		/// The list with sorting iteratons.
 		/// </value>
-		public Dictionary<int, string> Iterations
+		public List<Iteration> Iterations
 		{
-			get;
-			set;
+			get
+			{
+				return this.Data.Iterations;
+			}
+			private set
+			{
+				this.Data.Iterations = value;
+				OnPropertyChanged();
+			}
 		}
 
 		/// <summary>

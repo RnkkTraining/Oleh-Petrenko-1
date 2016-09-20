@@ -97,6 +97,24 @@
         <member name="P:SortApp.BL.Fakes.ShimData.SortedDataSetString">
             <summary>Sets the shim of Data.set_SortedData(String value)</summary>
         </member>
+        <member name="T:SortApp.BL.Fakes.ShimFileReader">
+            <summary>Shim type of SortApp.BL.FileReader</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimFileReader.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimFileReader.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimFileReader.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimFileReader.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimFileReader.ReadToStringString">
+            <summary>Sets the shim of FileReader.ReadToString(String filePath)</summary>
+        </member>
         <member name="T:SortApp.BL.Fakes.ShimIncomingDataValidator">
             <summary>Shim type of SortApp.BL.IncomingDataValidator</summary>
         </member>
