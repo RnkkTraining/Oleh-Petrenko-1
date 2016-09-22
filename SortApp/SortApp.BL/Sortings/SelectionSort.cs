@@ -33,6 +33,8 @@ namespace SortApp.BL.Sortings
 				}
 
 				this.Swap(arr, i, min);
+
+				this.AddIteration(arr, i, min);
 			}
 		}
 	}

@@ -25,6 +25,8 @@ namespace SortApp.BL.Sortings
 				for (int j = i; (j > 0) && (arr[j].CompareTo(arr[j - 1]) < 0); j--)
 				{
 					this.Swap(arr, j, j - 1);
+
+					this.AddIteration(arr, j, j - 1);
 				}
 			}
 		}

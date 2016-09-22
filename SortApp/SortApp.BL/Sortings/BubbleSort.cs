@@ -27,6 +27,8 @@ namespace SortApp.BL.Sortings
 					if (arr[j].CompareTo(arr[j + 1]) > 0)
 					{
 						this.Swap(arr, j, j + 1);
+
+						this.AddIteration(arr, j, j + 1);
 					}
 				}
 			}

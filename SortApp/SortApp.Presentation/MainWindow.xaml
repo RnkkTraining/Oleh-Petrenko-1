@@ -8,12 +8,12 @@
         Title="SortApp" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="File">
@@ -45,5 +45,12 @@
             <TextBox x:Name="ResultTextBox" Margin="0 5 5 0" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Center"
                      TextWrapping="Wrap" Grid.Column="1" Text="{Binding Path=ResultSorting, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
+        <DataGrid x:Name="IterationsDataGrid" Grid.Row="5" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" 
+                  ItemsSource="{Binding Iterations}">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="#" Width="30" Binding="{Binding Number}"/>
+                <DataGridTextColumn Header="Iteration" Width="*" Binding="{Binding Array}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

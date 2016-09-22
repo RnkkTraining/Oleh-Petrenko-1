@@ -58,6 +58,9 @@ namespace SortApp.BL.Sortings
 				if (i <= j)
 				{
 					this.Swap(arr, i, j);
+
+					this.AddIteration(arr, i, j);
+
 					i++;
 					j--;
 				}
