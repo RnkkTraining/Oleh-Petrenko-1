@@ -25,12 +25,7 @@ namespace SortApp.BL.Sortings
 		/// </param>
 		protected void AddIteration(T[] arr, int firstIndex, int secondIndex)
 		{
-			Iteration curretnIteration = new Iteration
-			{
-				Number = this.Iterations.Count + 1,
-				IndexOfFirstElement = firstIndex,
-				IndexOfSecondElement = secondIndex
-			};
+			Iteration curretnIteration = new Iteration(firstIndex, secondIndex, this.Iterations.Count + 1);
 
 			StringBuilder result = new StringBuilder(arr.Length);
 
@@ -39,7 +34,7 @@ namespace SortApp.BL.Sortings
 				result.Append($"{item} ");
 			}
 
-			curretnIteration.Array = result.ToString();
+			curretnIteration.ArrayState = result.ToString();
 
 			this.Iterations.Add(curretnIteration);
 		}
@@ -54,7 +49,7 @@ namespace SortApp.BL.Sortings
 		public List<Iteration> Iterations
 		{
 			get;
-			protected set;
+			private set;
 		}
 
 		/// <summary>

@@ -15,10 +15,30 @@ namespace SortApp.BL
 		/// <value>
 		/// The current state of the array.
 		/// </value>
-		public string Array
+		public string ArrayState
 		{
 			get;
 			set;
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Iteration"/> class.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <param name="indexOfFirstMovedElement">
+		/// Index of first moved element.
+		/// </param>
+		/// <param name="indexOfSecondMovedElement">
+		/// Index of second moved element.
+		/// </param>
+		/// <param name="number">
+		/// Iteration number.
+		/// </param>
+		public Iteration(int indexOfFirstMovedElement, int indexOfSecondMovedElement, int number)
+		{
+			this.IndexOfFirstMovedElement = indexOfFirstMovedElement;
+			this.IndexOfSecondMovedElement = indexOfSecondMovedElement;
+			this.Number = number;
 		}
 
 		/// <summary>
@@ -28,7 +48,7 @@ namespace SortApp.BL
 		/// <value>
 		/// Index of first element.
 		/// </value>
-		public int IndexOfFirstElement
+		public int IndexOfFirstMovedElement
 		{
 			get;
 			set;
@@ -41,7 +61,7 @@ namespace SortApp.BL
 		/// <value>
 		/// Index of second element.
 		/// </value>
-		public int IndexOfSecondElement
+		public int IndexOfSecondMovedElement
 		{
 			get;
 			set;
