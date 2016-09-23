@@ -10,6 +10,19 @@ namespace SortApp.BL
 	public sealed class Data
 	{
 		/// <summary>
+		/// Gets or sets object id in ctorage.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The Id in storage.
+		/// </value>
+		public int Id
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
 		/// Gets or sets the list which contains all iterations.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
@@ -17,6 +30,19 @@ namespace SortApp.BL
 		/// Dictionary which contains all iterations.
 		/// </value>
 		public List<Iteration> Iterations
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets name of array.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The array name as string.
+		/// </value>
+		public string Name
 		{
 			get;
 			set;

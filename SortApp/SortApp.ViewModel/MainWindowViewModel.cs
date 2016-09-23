@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
 using SortApp.BL;
@@ -12,6 +8,7 @@ using SortApp.BL.ArrayGenerators;
 using SortApp.BL.ItemsConvertors;
 using SortApp.BL.Repository;
 using SortApp.BL.Sortings;
+using SortApp.ViewModel.Properties;
 
 namespace SortApp.ViewModel
 {
@@ -21,6 +18,30 @@ namespace SortApp.ViewModel
 	/// <owner>Oleh Petrenko</owner>
 	public sealed class MainWindowViewModel : ViewModelBase
 	{
+		/// <summary>
+		/// Contains concrete implementation of loadWindowService.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly ILoadArrayService loadArrayService;
+
+		/// <summary>
+		/// Contains concrete implementation of messagebox provider.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly IMessageBoxProvider messageBoxProvider;
+
+		/// <summary>
+		/// Contains repository object.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly IRepository<Data> repository;
+
+		/// <summary>
+		/// Contains AaveArrayService object.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly ISaveArrayService saveArrayService;
+
 		/// <summary>
 		/// Contains SortEngine object.
 		/// </summary>
@@ -32,12 +53,6 @@ namespace SortApp.ViewModel
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		private readonly SorterFactory<int> sorterFactory;
-
-		/// <summary>
-		/// Contains concrete implementation of messagebox provider.
-		/// </summary>
-		/// <owner>Oleh Petrenko</owner>
-		private readonly IMessageBoxProvider messageBoxProvider;
 
 		/// <summary>
 		/// Contains concrete implementation of validator for incoming string.
@@ -52,6 +67,30 @@ namespace SortApp.ViewModel
 		private readonly IWindowCloseService windowCloseService;
 
 		/// <summary>
+		/// Check incoming array.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <returns>
+		/// Flag about checked array.
+		/// </returns>
+		private bool CheckIncomingArray()
+		{
+			if (this.OriginalData == null)
+			{
+				this.messageBoxProvider.ShowMessage("Incoming array cannot be empty", "Exception", MessageBoxButtons.OK);
+				return false;
+			}
+
+			if (!this.validator.IsValid(this.OriginalData))
+			{
+				this.messageBoxProvider.ShowMessage("Incoming array is invalid", "Exception", MessageBoxButtons.OK);
+				return false;
+			}
+
+			return true;
+		}
+
+		/// <summary>
 		/// Gets or sets command for button "Close".
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
@@ -61,7 +100,6 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandClose
 		{
 			get;
-			set;
 		}
 
 		/// <summary>
@@ -74,7 +112,30 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandHelp
 		{
 			get;
-			set;
+		}
+
+		/// <summary>
+		/// Gets or sets command for button "Load".
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// Command for button "Load".
+		/// </value>
+		public ICommand ClickCommandLoad
+		{
+			get;
+		}
+
+		/// <summary>
+		/// Gets or sets command for button "Save".
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// Command for button "Save".
+		/// </value>
+		public ICommand ClickCommandSave
+		{
+			get;
 		}
 
 		/// <summary>
@@ -87,7 +148,6 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandSort
 		{
 			get;
-			set;
 		}
 
 		/// <summary>
@@ -112,16 +172,53 @@ namespace SortApp.ViewModel
 		}
 
 		/// <summary>
+		/// Click action for button "Load".
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private void ClickMethodLoad()
+		{
+			LoadWindowViewModel loadWindowViewModel = new LoadWindowViewModel();
+
+			loadWindowViewModel.Arrays = this.repository.GellAll();
+
+			this.loadArrayService.ShowLoadArrayWindow(loadWindowViewModel);
+
+			if (loadWindowViewModel.SelectedData == null)
+				return;
+
+			this.OriginalData = loadWindowViewModel.SelectedData.OriginalData;
+			this.ResultSorting = loadWindowViewModel.SelectedData.SortedData;
+			this.Iterations = loadWindowViewModel.SelectedData.Iterations;
+		}
+
+		/// <summary>
+		/// Click action for button "Save".
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private void ClickMethodSave()
+		{
+			if (!this.CheckIncomingArray())
+				return;
+
+			SaveWindowViewModel saveWindowViewModel = new SaveWindowViewModel();
+			saveArrayService.ShowSaveDialog(saveWindowViewModel);
+
+			if (!saveWindowViewModel.IsCanSave)
+				return;
+
+			Data.Name = saveWindowViewModel.Name;
+
+			repository.Create(Data);
+		}
+
+		/// <summary>
 		/// Click action for button "Sort".
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		private void ClickMethodSort()
 		{
-			if (!this.validator.IsValid(this.OriginalData))
-			{
-				this.messageBoxProvider.ShowMessage("Incoming array is invalid", "Exception", MessageBoxButtons.OK);
+			if (!this.CheckIncomingArray())
 				return;
-			}
 
 			Sorter<int> sorter = sorterFactory.CreateSorter(this.SelectedAlgorithm);
 
@@ -166,10 +263,15 @@ namespace SortApp.ViewModel
 		/// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
-		public MainWindowViewModel(IMessageBoxProvider messageBoxProvider, IWindowCloseService windowCloseService)
+		public MainWindowViewModel(IMessageBoxProvider messageBoxProvider, IWindowCloseService windowCloseService,
+			ISaveArrayService saveArrayService, ILoadArrayService loadArrayService)
 		{
 			this.windowCloseService = windowCloseService;
 			this.messageBoxProvider = messageBoxProvider;
+			this.saveArrayService = saveArrayService;
+			this.loadArrayService = loadArrayService;
+
+			this.repository = new DataRepository();
 
 			this.Data = new Data();
 
@@ -180,6 +282,8 @@ namespace SortApp.ViewModel
 
 			this.ClickCommandClose = new Command(this.ClickMethodClose);
 			this.ClickCommandHelp = new Command(this.ClickMethodHelp);
+			this.ClickCommandLoad = new Command(this.ClickMethodLoad);
+			this.ClickCommandSave = new Command(this.ClickMethodSave);
 			this.ClickCommandSort = new Command(this.ClickMethodSort);
 		}
 

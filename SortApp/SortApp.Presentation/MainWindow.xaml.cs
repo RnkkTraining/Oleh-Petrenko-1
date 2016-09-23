@@ -18,11 +18,16 @@ namespace SortApp.Presentation
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
+	/// <owner>Oleh Petrenko</owner>
 	public partial class MainWindow : Window
 	{
+		/// <summary>
+		/// Initialize window component.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
 		public MainWindow()
 		{
-			InitializeComponent();
+			this.InitializeComponent();
 		}
 	}
 }
