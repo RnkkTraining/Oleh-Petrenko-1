@@ -43,10 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command.cs" />
+    <Compile Include="ILoadArrayService.cs" />
     <Compile Include="IMessageBoxProvider.cs" />
+    <Compile Include="ISaveArrayService.cs" />
     <Compile Include="IWindowCloseService.cs" />
+    <Compile Include="LoadWindowViewModel.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveWindowViewModel.cs" />
     <Compile Include="SortingAlgorithmNameAccordanceKindCreator.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>

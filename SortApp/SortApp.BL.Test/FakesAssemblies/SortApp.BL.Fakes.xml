@@ -61,6 +61,12 @@
         <member name="T:SortApp.BL.Fakes.ShimData.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.IterationsGet">
+            <summary>Sets the shim of Data.get_Iterations()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.IterationsSetListOfIteration">
+            <summary>Sets the shim of Data.set_Iterations(List`1&lt;Iteration&gt; value)</summary>
+        </member>
         <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.OriginalDataGet">
             <summary>Sets the shim of Data.get_OriginalData()</summary>
         </member>
@@ -84,6 +90,12 @@
         </member>
         <member name="P:SortApp.BL.Fakes.ShimData.Constructor">
             <summary>Sets the shim of Data.Data()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.IterationsGet">
+            <summary>Sets the shim of Data.get_Iterations()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.IterationsSetListOfIteration">
+            <summary>Sets the shim of Data.set_Iterations(List`1&lt;Iteration&gt; value)</summary>
         </member>
         <member name="P:SortApp.BL.Fakes.ShimData.OriginalDataGet">
             <summary>Sets the shim of Data.get_OriginalData()</summary>
@@ -144,6 +156,78 @@
         </member>
         <member name="P:SortApp.BL.Fakes.ShimIncomingDataValidator.IsValidString">
             <summary>Sets the shim of IncomingDataValidator.IsValid(String incomingData)</summary>
+        </member>
+        <member name="T:SortApp.BL.Fakes.ShimIteration">
+            <summary>Shim type of SortApp.BL.Iteration</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimIteration.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimIteration.#ctor(SortApp.BL.Iteration)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:SortApp.BL.Fakes.ShimIteration.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.AllInstances.ArrayGet">
+            <summary>Sets the shim of Iteration.get_Array()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.AllInstances.ArraySetString">
+            <summary>Sets the shim of Iteration.set_Array(String value)</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.AllInstances.IndexOfFirstElementGet">
+            <summary>Sets the shim of Iteration.get_IndexOfFirstElement()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.AllInstances.IndexOfFirstElementSetInt32">
+            <summary>Sets the shim of Iteration.set_IndexOfFirstElement(Int32 value)</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.AllInstances.IndexOfSecondElementGet">
+            <summary>Sets the shim of Iteration.get_IndexOfSecondElement()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.AllInstances.IndexOfSecondElementSetInt32">
+            <summary>Sets the shim of Iteration.set_IndexOfSecondElement(Int32 value)</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.AllInstances.NumberGet">
+            <summary>Sets the shim of Iteration.get_Number()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.AllInstances.NumberSetInt32">
+            <summary>Sets the shim of Iteration.set_Number(Int32 value)</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.ArrayGet">
+            <summary>Sets the shim of Iteration.get_Array()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.ArraySetString">
+            <summary>Sets the shim of Iteration.set_Array(String value)</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimIteration.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimIteration.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.Constructor">
+            <summary>Sets the shim of Iteration.Iteration()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.IndexOfFirstElementGet">
+            <summary>Sets the shim of Iteration.get_IndexOfFirstElement()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.IndexOfFirstElementSetInt32">
+            <summary>Sets the shim of Iteration.set_IndexOfFirstElement(Int32 value)</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.IndexOfSecondElementGet">
+            <summary>Sets the shim of Iteration.get_IndexOfSecondElement()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.IndexOfSecondElementSetInt32">
+            <summary>Sets the shim of Iteration.set_IndexOfSecondElement(Int32 value)</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.NumberGet">
+            <summary>Sets the shim of Iteration.get_Number()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimIteration.NumberSetInt32">
+            <summary>Sets the shim of Iteration.set_Number(Int32 value)</summary>
         </member>
         <member name="T:SortApp.BL.Fakes.ShimSortEngine`1">
             <summary>Shim type of SortApp.BL.SortEngine`1</summary>
@@ -249,6 +333,99 @@
         </member>
         <member name="M:SortApp.BL.ItemsConvertors.Fakes.StubISortItemsCoverter`1.SortApp#BL#ItemsConvertors#ISortItemsCoverter{T}#Convert(System.String)">
             <summary>Sets the stub of ISortItemsCoverter`1.Convert(String value)</summary>
+        </member>
+        <member name="T:SortApp.BL.Repository.Fakes.ShimDataRepository">
+            <summary>Shim type of SortApp.BL.Repository.DataRepository</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.ShimDataRepository.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.ShimDataRepository.#ctor(SortApp.BL.Repository.DataRepository)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.CreateData">
+            <summary>Sets the shim of DataRepository.Create(Data item)</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.DeleteData">
+            <summary>Sets the shim of DataRepository.Delete(Data item)</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.GetByIdInt32">
+            <summary>Sets the shim of DataRepository.GetById(Int32 id)</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.Save">
+            <summary>Sets the shim of DataRepository.Save()</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.UpdateData">
+            <summary>Sets the shim of DataRepository.Update(Data item)</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.ShimDataRepository.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.ShimDataRepository.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.ShimDataRepository.Bind(SortApp.BL.Repository.IRepository{SortApp.BL.Data})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.Constructor">
+            <summary>Sets the shim of DataRepository.DataRepository()</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.CreateData">
+            <summary>Sets the shim of DataRepository.Create(Data item)</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.DeleteData">
+            <summary>Sets the shim of DataRepository.Delete(Data item)</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.GetByIdInt32">
+            <summary>Sets the shim of DataRepository.GetById(Int32 id)</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.Save">
+            <summary>Sets the shim of DataRepository.Save()</summary>
+        </member>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.UpdateData">
+            <summary>Sets the shim of DataRepository.Update(Data item)</summary>
+        </member>
+        <member name="T:SortApp.BL.Repository.Fakes.StubIRepository`1">
+            <summary>Stub type of SortApp.BL.Repository.IRepository`1</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.StubIRepository`1.#ctor">
+            <summary>Initializes a new instance of type StubIRepository</summary>
+        </member>
+        <member name="F:SortApp.BL.Repository.Fakes.StubIRepository`1.CreateT0">
+            <summary>Sets the stub of IRepository`1.Create(!0 item)</summary>
+        </member>
+        <member name="F:SortApp.BL.Repository.Fakes.StubIRepository`1.DeleteT0">
+            <summary>Sets the stub of IRepository`1.Delete(!0 item)</summary>
+        </member>
+        <member name="F:SortApp.BL.Repository.Fakes.StubIRepository`1.GetByIdInt32">
+            <summary>Sets the stub of IRepository`1.GetById(Int32 id)</summary>
+        </member>
+        <member name="F:SortApp.BL.Repository.Fakes.StubIRepository`1.Save">
+            <summary>Sets the stub of IRepository`1.Save()</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.StubIRepository`1.SortApp#BL#Repository#IRepository{T}#Create(`0)">
+            <summary>Sets the stub of IRepository`1.Create(!0 item)</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.StubIRepository`1.SortApp#BL#Repository#IRepository{T}#Delete(`0)">
+            <summary>Sets the stub of IRepository`1.Delete(!0 item)</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.StubIRepository`1.SortApp#BL#Repository#IRepository{T}#GetById(System.Int32)">
+            <summary>Sets the stub of IRepository`1.GetById(Int32 id)</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.StubIRepository`1.SortApp#BL#Repository#IRepository{T}#Save">
+            <summary>Sets the stub of IRepository`1.Save()</summary>
+        </member>
+        <member name="M:SortApp.BL.Repository.Fakes.StubIRepository`1.SortApp#BL#Repository#IRepository{T}#Update(`0)">
+            <summary>Sets the stub of IRepository`1.Update(!0 item)</summary>
+        </member>
+        <member name="F:SortApp.BL.Repository.Fakes.StubIRepository`1.UpdateT0">
+            <summary>Sets the stub of IRepository`1.Update(!0 item)</summary>
         </member>
         <member name="T:SortApp.BL.Sortings.Fakes.ShimBubbleSort`1">
             <summary>Shim type of SortApp.BL.Sortings.BubbleSort`1</summary>
@@ -382,8 +559,20 @@
         <member name="M:SortApp.BL.Sortings.Fakes.ShimSorter`1.#ctor(SortApp.BL.Sortings.Sorter{`0})">
             <summary>Initializes a new shim for the given instance</summary>
         </member>
+        <member name="P:SortApp.BL.Sortings.Fakes.ShimSorter`1.AddIterationT0ArrayInt32Int32">
+            <summary>Sets the shim of Sorter`1.AddIteration(!0[] arr, Int32 firstIndex, Int32 secondIndex)</summary>
+        </member>
         <member name="T:SortApp.BL.Sortings.Fakes.ShimSorter`1.AllInstances">
             <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SortApp.BL.Sortings.Fakes.ShimSorter`1.AllInstances.AddIterationT0ArrayInt32Int32">
+            <summary>Sets the shim of Sorter`1.AddIteration(!0[] arr, Int32 firstIndex, Int32 secondIndex)</summary>
+        </member>
+        <member name="P:SortApp.BL.Sortings.Fakes.ShimSorter`1.AllInstances.IterationsGet">
+            <summary>Sets the shim of Sorter`1.get_Iterations()</summary>
+        </member>
+        <member name="P:SortApp.BL.Sortings.Fakes.ShimSorter`1.AllInstances.IterationsSetListOfIteration">
+            <summary>Sets the shim of Sorter`1.set_Iterations(List`1&lt;Iteration&gt; value)</summary>
         </member>
         <member name="P:SortApp.BL.Sortings.Fakes.ShimSorter`1.AllInstances.SwapT0ArrayInt32Int32">
             <summary>Sets the shim of Sorter`1.Swap(!0[] arr, Int32 firstIndex, Int32 secondIndex)</summary>
@@ -399,6 +588,12 @@
         </member>
         <member name="P:SortApp.BL.Sortings.Fakes.ShimSorter`1.Constructor">
             <summary>Sets the shim of Sorter`1.Sorter`1()</summary>
+        </member>
+        <member name="P:SortApp.BL.Sortings.Fakes.ShimSorter`1.IterationsGet">
+            <summary>Sets the shim of Sorter`1.get_Iterations()</summary>
+        </member>
+        <member name="P:SortApp.BL.Sortings.Fakes.ShimSorter`1.IterationsSetListOfIteration">
+            <summary>Sets the shim of Sorter`1.set_Iterations(List`1&lt;Iteration&gt; value)</summary>
         </member>
         <member name="P:SortApp.BL.Sortings.Fakes.ShimSorter`1.SwapT0ArrayInt32Int32">
             <summary>Sets the shim of Sorter`1.Swap(!0[] arr, Int32 firstIndex, Int32 secondIndex)</summary>

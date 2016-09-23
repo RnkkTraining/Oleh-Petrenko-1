@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows;
+using SortApp.Presentation.LoadArray;
+using SortApp.Presentation.SaveArray;
 using SortApp.ViewModel;
 
 namespace SortApp.Presentation
@@ -18,7 +20,8 @@ namespace SortApp.Presentation
 		{
 			MainWindow mw = new MainWindow
 			{
-				DataContext = new MainWindowViewModel(new MessageBoxProvider(), new WindowCloseService())
+				DataContext = new MainWindowViewModel(
+					new MessageBoxProvider(), new WindowCloseService(), new SaveArrayService(), new LoadArrayService())
 			};
 
 			mw.Show();
