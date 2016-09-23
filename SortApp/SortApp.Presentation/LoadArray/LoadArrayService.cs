@@ -15,12 +15,12 @@ namespace SortApp.Presentation.LoadArray
 		/// <owner>Oleh Petrenko</owner>
 		public void ShowLoadArrayWindow(ViewModelBase dataContext)
 		{
-			LoadArrayWindow loadArrayWindow = new LoadArrayWindow
+			LoadArrayWindow loadArrayWindow = new LoadArrayWindow()
 			{
 				DataContext = dataContext
 			};
 
-			loadArrayWindow.ShowDialog();
+			loadArrayWindow.Show();
 		}
 	}
 }

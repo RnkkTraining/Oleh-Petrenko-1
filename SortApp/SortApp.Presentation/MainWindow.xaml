@@ -32,7 +32,7 @@
             <Grid Grid.Column="1" Margin="0 5 5 5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30" />
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="30" />
                 </Grid.RowDefinitions>
                 <Button x:Name="SaveButton" Content="Save" Grid.Row="0" Command="{Binding ClickCommandSave}"/>

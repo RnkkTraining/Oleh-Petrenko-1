@@ -231,12 +231,9 @@ namespace SortApp.BL.Repository
 		/// Initializes a new instance of the <see cref="DataRepository"/> class.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
-		/// <param name="connection">
-		/// SqlConnection entity for connecting to database.
-		/// </param>
-		public DataRepository(SqlConnection connection)
+		public DataRepository()
 		{
-			this.connection = connection;
+			this.connection = new SqlConnection(Settings.Default.DbConnect);
 
 			this.adapterData = this.CreateDataAdapter();
 			this.adapterIteration = this.CreateIterationAdapter();

@@ -17,7 +17,11 @@
                 <DataGridTextColumn Header="Array name" Width="*" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="LoadButton" Margin="0 0 5 5" Grid.Row="1" Content="LOAD" HorizontalAlignment="Right" 
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="LoadButton" Margin="0 0 5 5" Content="LOAD" HorizontalAlignment="Right" 
+                Width="80" Height="25" IsDefault="True" Command="{Binding ClickCommandLoad}"/>
+            <Button x:Name="CancelButton" Margin="0 0 5 5" Content="Cancel" HorizontalAlignment="Right" 
                 Width="80" Height="25" IsCancel="True"/>
+        </StackPanel>
     </Grid>
 </Window>

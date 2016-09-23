@@ -8,6 +8,7 @@ using SortApp.BL.ArrayGenerators;
 using SortApp.BL.ItemsConvertors;
 using SortApp.BL.Repository;
 using SortApp.BL.Sortings;
+using SortApp.ViewModel.Properties;
 
 namespace SortApp.ViewModel
 {
@@ -183,13 +184,16 @@ namespace SortApp.ViewModel
 		{
 			LoadWindowViewModel loadWindowViewModel = new LoadWindowViewModel();
 
-			loadWindowViewModel.Arrays = repository.GellAll();
+			loadWindowViewModel.Arrays = this.repository.GellAll();
 
-			loadArrayService.ShowLoadArrayWindow(loadWindowViewModel);
+			this.loadArrayService.ShowLoadArrayWindow(loadWindowViewModel);
 
-			OriginalData = loadWindowViewModel.SelectedValue.OriginalData;
-			ResultSorting = loadWindowViewModel.SelectedValue.SortedData;
-			Iterations = loadWindowViewModel.SelectedValue.Iterations;
+			if (loadWindowViewModel.SelectedData == null)
+				return;
+
+			this.OriginalData = loadWindowViewModel.SelectedData.OriginalData;
+			this.ResultSorting = loadWindowViewModel.SelectedData.SortedData;
+			this.Iterations = loadWindowViewModel.SelectedData.Iterations;
 		}
 
 		/// <summary>
@@ -203,6 +207,9 @@ namespace SortApp.ViewModel
 
 			SaveWindowViewModel saveWindowViewModel = new SaveWindowViewModel();
 			saveArrayService.ShowSaveDialog(saveWindowViewModel);
+
+			if (!saveWindowViewModel.IsCanSave)
+				return;
 
 			Data.Name = saveWindowViewModel.Name;
 
@@ -269,8 +276,7 @@ namespace SortApp.ViewModel
 			this.saveArrayService = saveArrayService;
 			this.loadArrayService = loadArrayService;
 
-			this.repository = new DataRepository(
-				new SqlConnection("Data Source=WS378;Initial Catalog=SortAppDb;Integrated Security=True"));
+			this.repository = new DataRepository();
 
 			this.Data = new Data();
 

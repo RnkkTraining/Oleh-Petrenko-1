@@ -12,7 +12,6 @@ namespace SortApp.ViewModel
 		/// Window for saving array.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
-		/// <param></param>
 		/// <param name="dataContext">
 		/// DataContext for window.
 		/// </param>

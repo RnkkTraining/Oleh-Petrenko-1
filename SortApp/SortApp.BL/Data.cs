@@ -9,6 +9,13 @@ namespace SortApp.BL
 	/// <owner>Oleh Petrenko</owner>
 	public sealed class Data
 	{
+		/// <summary>
+		/// Gets or sets object id in ctorage.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The Id in storage.
+		/// </value>
 		public int Id
 		{
 			get;
