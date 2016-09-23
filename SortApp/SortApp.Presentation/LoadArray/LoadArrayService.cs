@@ -20,7 +20,7 @@ namespace SortApp.Presentation.LoadArray
 				DataContext = dataContext
 			};
 
-			loadArrayWindow.Show();
+			loadArrayWindow.ShowDialog();
 		}
 	}
 }

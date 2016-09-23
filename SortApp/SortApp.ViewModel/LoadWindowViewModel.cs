@@ -60,7 +60,6 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandLoad
 		{
 			get;
-			set;
 		}
 
 		/// <summary>

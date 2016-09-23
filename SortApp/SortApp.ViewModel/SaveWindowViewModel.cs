@@ -19,7 +19,6 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandSave
 		{
 			get;
-			set;
 		}
 
 		/// <summary>

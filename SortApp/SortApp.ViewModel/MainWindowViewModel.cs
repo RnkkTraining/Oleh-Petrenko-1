@@ -100,7 +100,6 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandClose
 		{
 			get;
-			set;
 		}
 
 		/// <summary>
@@ -113,7 +112,6 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandHelp
 		{
 			get;
-			set;
 		}
 
 		/// <summary>
@@ -126,7 +124,6 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandLoad
 		{
 			get;
-			set;
 		}
 
 		/// <summary>
@@ -139,7 +136,6 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandSave
 		{
 			get;
-			set;
 		}
 
 		/// <summary>
@@ -152,7 +148,6 @@ namespace SortApp.ViewModel
 		public ICommand ClickCommandSort
 		{
 			get;
-			set;
 		}
 
 		/// <summary>
