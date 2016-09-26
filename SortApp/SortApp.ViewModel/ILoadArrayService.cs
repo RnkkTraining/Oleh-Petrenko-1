@@ -15,6 +15,6 @@ namespace SortApp.ViewModel
 		/// <param name="dataContext">
 		/// DataContext for window.
 		/// </param>
-		void ShowLoadArrayWindow(ViewModelBase dataContext);
+		void ShowLoadArrayWindow(LoadWindowViewModel dataContext);
 	}
 }

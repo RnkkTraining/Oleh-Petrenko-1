@@ -25,6 +25,16 @@ namespace SortApp.ViewModel
 		}
 
 		/// <summary>
+		/// Close action for current window.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		public Action CloseAction
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
 		/// Gets or sets selected data for MainWindowViewModel.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
@@ -69,6 +79,8 @@ namespace SortApp.ViewModel
 		private void ClickMethodLoad()
 		{
 			this.SelectedData = this.SelectedValue;
+
+			this.CloseAction();
 		}
 
 		/// <summary>

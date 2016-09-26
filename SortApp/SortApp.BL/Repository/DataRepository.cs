@@ -31,6 +31,12 @@ namespace SortApp.BL.Repository
 		private readonly SqlConnection connection;
 
 		/// <summary>
+		/// Contains concrete implementation of dataAdapter factory.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly DataAdapterFacroty dataAdapterFacroty;
+
+		/// <summary>
 		/// Contains DataSet object.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
@@ -45,7 +51,7 @@ namespace SortApp.BL.Repository
 		/// </param>
 		public void Create(Data item)
 		{
-			this.adapterData = this.CreateDataAdapter();
+			this.adapterData = this.CreateDataAdapter(DataAdapterKindEnum.Data);
 			this.dataSet = this.FillSchemaData();
 
 			DataRow newRowData = this.dataSet.Tables["Data"].NewRow();
@@ -78,70 +84,18 @@ namespace SortApp.BL.Repository
 		}
 
 		/// <summary>
-		/// Creates dataAdapter for Data.
+		/// Creates concrete implementation of dataAdapter.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
+		/// <param name="kindOfDataAdapter">
+		/// Kind of CreatorDataAdapter.
+		/// </param>
 		/// <returns>
-		/// DataAdapter for Data.
+		/// Concrete implementation of dataAdapter.
 		/// </returns>
-		private SqlDataAdapter CreateDataAdapter()
+		private SqlDataAdapter CreateDataAdapter(DataAdapterKindEnum kindOfDataAdapter)
 		{
-			SqlDataAdapter adapter = new SqlDataAdapter();
-
-			//
-			// SelectCommand.
-			//
-			SqlCommand cmdSelect = new SqlCommand("SELECT * FROM Data WHERE Id = @Id", this.connection);
-			adapter.SelectCommand = cmdSelect;
-
-			SqlParameter parameter = adapter.SelectCommand.Parameters.Add("@Id", SqlDbType.Int);
-			parameter.SourceColumn = "Id";
-
-			//
-			// InsertCommand.
-			//
-			SqlCommand cmdInsert = new SqlCommand("INSERT INTO Data(OriginalData, SortedData, Name) VALUES(@OriginalData, @SortedData, @Name)", this.connection);
-			adapter.InsertCommand = cmdInsert;
-
-			parameter = adapter.InsertCommand.Parameters.Add("@OriginalData", SqlDbType.Text);
-			parameter.SourceColumn = "OriginalData";
-
-			parameter = adapter.InsertCommand.Parameters.Add("@SortedData", SqlDbType.Text);
-			parameter.SourceColumn = "SortedData";
-
-			parameter = adapter.InsertCommand.Parameters.Add("@Name", SqlDbType.NChar, 255);
-			parameter.SourceColumn = "Name";
-
-			//
-			// UpdateCommand.
-			//
-			SqlCommand cmdUpdt = new SqlCommand("UPDATE Data SET OriginalData = @OriginalData, SortedData = @SortedData, Name = @Name WHERE Id = @Id", this.connection);
-			adapter.UpdateCommand = cmdUpdt;
-
-			parameter = adapter.UpdateCommand.Parameters.Add("@Id", SqlDbType.Int);
-			parameter.SourceColumn = "Id";
-			parameter.SourceVersion = DataRowVersion.Original;
-
-			parameter = adapter.UpdateCommand.Parameters.Add("@OriginalData", SqlDbType.Text);
-			parameter.SourceColumn = "OriginalData";
-
-			parameter = adapter.UpdateCommand.Parameters.Add("@SortedData", SqlDbType.Text);
-			parameter.SourceColumn = "SortedData";
-
-			parameter = adapter.UpdateCommand.Parameters.Add("@Name", SqlDbType.NChar, 255);
-			parameter.SourceColumn = "Name";
-
-			//
-			// DeleteCommand.
-			//
-			SqlCommand cmdDlt = new SqlCommand("DELETE FROM Data WHERE Id = @Id", this.connection);
-			adapter.DeleteCommand = cmdDlt;
-
-			parameter = adapter.DeleteCommand.Parameters.Add("@Id", SqlDbType.Int);
-			parameter.SourceColumn = "Id";
-			parameter.SourceVersion = DataRowVersion.Original;
-
-			return adapter;
+			return this.dataAdapterFacroty.CreateAdapter(kindOfDataAdapter).CreateAdapter(this.connection);
 		}
 
 		/// <summary>
@@ -183,60 +137,16 @@ namespace SortApp.BL.Repository
 		}
 
 		/// <summary>
-		/// Creates dataAdapter for Iteration.
-		/// </summary>
-		/// <owner>Oleh Petrenko</owner>
-		/// <returns>
-		/// Data adapter for Iteration.
-		/// </returns>
-		private SqlDataAdapter CreateIterationAdapter()
-		{
-			SqlDataAdapter adapter = new SqlDataAdapter();
-
-			//
-			// SelectCommand.
-			//
-			SqlCommand cmdSelect = new SqlCommand("SELECT * FROM Iteration WHERE DataId = @DataId", this.connection);
-			adapter.SelectCommand = cmdSelect;
-
-			SqlParameter parameter = adapter.SelectCommand.Parameters.Add("@DataId", SqlDbType.Int);
-			parameter.SourceColumn = "DataId";
-
-			//
-			// InsertCommand.
-			//
-			SqlCommand cmdInsert = new SqlCommand("INSERT INTO Iteration(ArrayState, IndexOfFirstMovedElement, IndexOfSecondMovedElement, Number, DataId) " +
-												"VALUES(@ArrayState, @IndexOfFirstMovedElement, @IndexOfSecondMovedElement, @Number, @DataId)", this.connection);
-			adapter.InsertCommand = cmdInsert;
-
-			parameter = adapter.InsertCommand.Parameters.Add("@ArrayState", SqlDbType.Text);
-			parameter.SourceColumn = "ArrayState";
-
-			parameter = adapter.InsertCommand.Parameters.Add("@IndexOfFirstMovedElement", SqlDbType.Int);
-			parameter.SourceColumn = "IndexOfFirstMovedElement";
-
-			parameter = adapter.InsertCommand.Parameters.Add("@IndexOfSecondMovedElement", SqlDbType.Int);
-			parameter.SourceColumn = "IndexOfSecondMovedElement";
-
-			parameter = adapter.InsertCommand.Parameters.Add("@Number", SqlDbType.Int);
-			parameter.SourceColumn = "Number";
-
-			parameter = adapter.InsertCommand.Parameters.Add("@DataId", SqlDbType.Int);
-			parameter.SourceColumn = "DataId";
-
-			return adapter;
-		}
-
-		/// <summary>
 		/// Initializes a new instance of the <see cref="DataRepository"/> class.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		public DataRepository()
 		{
 			this.connection = new SqlConnection(Settings.Default.DbConnect);
+			this.dataAdapterFacroty = new DataAdapterFacroty();
 
-			this.adapterData = this.CreateDataAdapter();
-			this.adapterIteration = this.CreateIterationAdapter();
+			this.adapterData = this.CreateDataAdapter(DataAdapterKindEnum.Data);
+			this.adapterIteration = this.CreateDataAdapter(DataAdapterKindEnum.Iteration);
 
 			this.dataSet = this.FillSchemaData();
 		}
@@ -250,7 +160,7 @@ namespace SortApp.BL.Repository
 		/// </param>
 		public void Delete(Data item)
 		{
-			this.adapterData = this.CreateDataAdapter();
+			this.adapterData = this.CreateDataAdapter(DataAdapterKindEnum.Data);
 			this.dataSet = this.FillSchemaData();
 
 			this.adapterData.SelectCommand.Parameters["@Id"].Value = item.Id;
@@ -288,7 +198,7 @@ namespace SortApp.BL.Repository
 		/// </returns>
 		public List<Data> GellAll()
 		{
-			this.adapterData = this.CreateDataAdapter();
+			this.adapterData = this.CreateDataAdapter(DataAdapterKindEnum.Data);
 			this.dataSet = this.FillSchemaData();
 
 			List<Data> arrays = new List<Data>();
@@ -322,7 +232,7 @@ namespace SortApp.BL.Repository
 		/// </returns>
 		public Data GetById(int id)
 		{
-			this.adapterData = this.CreateDataAdapter();
+			this.adapterData = this.CreateDataAdapter(DataAdapterKindEnum.Data);
 			this.dataSet = this.FillSchemaData();
 
 			this.adapterData.SelectCommand.Parameters["@Id"].Value = id;
@@ -375,7 +285,7 @@ namespace SortApp.BL.Repository
 		/// </param>
 		public void Update(Data item)
 		{
-			this.adapterData = this.CreateDataAdapter();
+			this.adapterData = this.CreateDataAdapter(DataAdapterKindEnum.Data);
 			this.dataSet = this.FillSchemaData();
 
 			this.adapterData.SelectCommand.Parameters["@Id"].Value = item.Id;

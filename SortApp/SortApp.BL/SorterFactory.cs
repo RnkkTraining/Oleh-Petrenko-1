@@ -14,7 +14,7 @@ namespace SortApp.BL
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		/// <param name="algorithmKind">
-		/// Incoming array as string.
+		/// Kind of sorting algorithm.
 		/// </param>
 		public Sorter<T> CreateSorter(SortingAlgorithmKind algorithmKind)
 		{

@@ -14,12 +14,18 @@ namespace SortApp.Presentation.SaveArray
 		/// Shows window for saving array.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
-		public void ShowSaveDialog(ViewModelBase dataContext)
+		/// <param name="dataContext">
+		/// View model for current window.
+		/// </param>
+		public void ShowSaveDialog(SaveWindowViewModel dataContext)
 		{
 			Window saveWindow = new SaveDialogWindow
 			{
 				DataContext = dataContext
 			};
+
+			if (dataContext.CloseAction == null)
+				dataContext.CloseAction = () => saveWindow.Close();
 
 			saveWindow.ShowDialog();
 		}
