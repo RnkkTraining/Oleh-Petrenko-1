@@ -13,15 +13,18 @@ namespace SortApp.Presentation.LoadArray
 		/// Shows window for loading array.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
-		public void ShowLoadArrayWindow(ViewModelBase dataContext)
+		/// <param name="dataContext">
+		/// View model for current window.
+		/// </param>
+		public void ShowLoadArrayWindow(LoadWindowViewModel dataContext)
 		{
-			LoadArrayWindow loadArrayWindow = new LoadArrayWindow()
+			LoadArrayWindow loadArrayWindow = new LoadArrayWindow
 			{
 				DataContext = dataContext
 			};
 
-			if (((LoadWindowViewModel)dataContext).CloseAction == null)
-				((LoadWindowViewModel)dataContext).CloseAction = () => loadArrayWindow.Close();
+			if (dataContext.CloseAction == null)
+				dataContext.CloseAction = () => loadArrayWindow.Close();
 
 			loadArrayWindow.ShowDialog();
 		}

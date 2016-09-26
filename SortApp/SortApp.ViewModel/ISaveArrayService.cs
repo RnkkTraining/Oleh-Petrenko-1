@@ -15,6 +15,6 @@ namespace SortApp.ViewModel
 		/// <param name="dataContext">
 		/// DataContext for window.
 		/// </param>
-		void ShowSaveDialog(ViewModelBase dataContext);
+		void ShowSaveDialog(SaveWindowViewModel dataContext);
 	}
 }
