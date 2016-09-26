@@ -188,6 +188,7 @@ namespace SortApp.ViewModel
 
 			this.OriginalData = loadWindowViewModel.SelectedData.OriginalData;
 			this.ResultSorting = loadWindowViewModel.SelectedData.SortedData;
+			this.SelectedAlgorithm = loadWindowViewModel.SelectedData.KindOfSortingAlgorithm;
 			this.Iterations = loadWindowViewModel.SelectedData.Iterations;
 		}
 
@@ -336,8 +337,16 @@ namespace SortApp.ViewModel
 		/// </value>
 		public SortingAlgorithmKind SelectedAlgorithm
 		{
-			get;
-			set;
+			get
+			{
+				return this.Data.KindOfSortingAlgorithm;
+				
+			}
+			set
+			{
+				this.Data.KindOfSortingAlgorithm = value;
+				this.OnPropertyChanged();
+			}
 		}
 
 		/// <summary>

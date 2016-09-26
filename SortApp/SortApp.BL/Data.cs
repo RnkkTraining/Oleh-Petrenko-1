@@ -36,6 +36,19 @@ namespace SortApp.BL
 		}
 
 		/// <summary>
+		/// Gets or sets kind of sorting algorithm.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// Kind of sorting algorithm.
+		/// </value>
+		public SortingAlgorithmKind KindOfSortingAlgorithm
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
 		/// Gets or sets name of array.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
