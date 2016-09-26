@@ -20,6 +20,9 @@ namespace SortApp.Presentation.LoadArray
 				DataContext = dataContext
 			};
 
+			if (((LoadWindowViewModel)dataContext).CloseAction == null)
+				((LoadWindowViewModel)dataContext).CloseAction = () => loadArrayWindow.Close();
+
 			loadArrayWindow.ShowDialog();
 		}
 	}

@@ -22,12 +22,24 @@ namespace SortApp.ViewModel
 		}
 
 		/// <summary>
+		/// Close action for current window.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		public Action CloseAction
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
 		/// Click action for button "Load".
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		private void ClickMethodSave()
 		{
 			this.IsCanSave = true;
+
+			this.CloseAction();
 		}
 
 		/// <summary>

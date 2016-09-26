@@ -21,6 +21,9 @@ namespace SortApp.Presentation.SaveArray
 				DataContext = dataContext
 			};
 
+			if (((SaveWindowViewModel)dataContext).CloseAction == null)
+				((SaveWindowViewModel)dataContext).CloseAction = () => saveWindow.Close();
+
 			saveWindow.ShowDialog();
 		}
 	}
