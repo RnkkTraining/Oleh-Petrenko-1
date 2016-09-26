@@ -43,6 +43,11 @@
     <Compile Include="Data.cs" />
     <Compile Include="ArrayGenerators\ArrayGenerator.cs" />
     <Compile Include="ArrayGenerators\IArrayGenerator.cs" />
+    <Compile Include="DataAdapterFacroty.cs" />
+    <Compile Include="DataAdapterKindEnum.cs" />
+    <Compile Include="DataAdapters\CreatorDataAdapterData.cs" />
+    <Compile Include="DataAdapters\CreatorDataAdapterIteration.cs" />
+    <Compile Include="DataAdapters\IDataAdapterCreator.cs" />
     <Compile Include="FileReader.cs" />
     <Compile Include="ItemsConvertors\ConverterStringToInt.cs" />
     <Compile Include="ItemsConvertors\ISortItemsCoverter.cs" />
