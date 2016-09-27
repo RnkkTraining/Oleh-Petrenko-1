@@ -36,6 +36,19 @@ namespace SortApp.BL
 		}
 
 		/// <summary>
+		/// Gets or sets kind of sorting algorithm.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// Kind of sorting algorithm.
+		/// </value>
+		public SortingAlgorithmKind KindOfSortingAlgorithm
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
 		/// Gets or sets name of array.
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
@@ -69,6 +82,19 @@ namespace SortApp.BL
 		/// The sorted array as string.
 		/// </value>
 		public string SortedData
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets the sorting time as string.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The sorting time as string.
+		/// </value>
+		public string SortingTime
 		{
 			get;
 			set;

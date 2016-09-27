@@ -36,7 +36,8 @@ namespace SortApp.BL.DataAdapters
 			//
 			// InsertCommand.
 			//
-			SqlCommand cmdInsert = new SqlCommand("INSERT INTO Data(OriginalData, SortedData, Name) VALUES(@OriginalData, @SortedData, @Name)", connection);
+			SqlCommand cmdInsert = new SqlCommand(@"INSERT INTO Data(OriginalData, SortedData, Name, KindOfSortingAlgorithm) 
+													VALUES(@OriginalData, @SortedData, @Name, @KindOfSortingAlgorithm)", connection);
 			adapter.InsertCommand = cmdInsert;
 
 			parameter = adapter.InsertCommand.Parameters.Add("@OriginalData", SqlDbType.Text);
@@ -48,10 +49,14 @@ namespace SortApp.BL.DataAdapters
 			parameter = adapter.InsertCommand.Parameters.Add("@Name", SqlDbType.NChar, 255);
 			parameter.SourceColumn = "Name";
 
+			parameter = adapter.InsertCommand.Parameters.Add("@KindOfSortingAlgorithm", SqlDbType.Int);
+			parameter.SourceColumn = "KindOfSortingAlgorithm";
+
 			//
 			// UpdateCommand.
 			//
-			SqlCommand cmdUpdt = new SqlCommand("UPDATE Data SET OriginalData = @OriginalData, SortedData = @SortedData, Name = @Name WHERE Id = @Id", connection);
+			SqlCommand cmdUpdt = new SqlCommand(@"UPDATE Data SET OriginalData = @OriginalData, SortedData = @SortedData, Name = @Name, 
+												KindOfSortingAlgorithm = @KindOfSortingAlgorithm WHERE Id = @Id", connection);
 			adapter.UpdateCommand = cmdUpdt;
 
 			parameter = adapter.UpdateCommand.Parameters.Add("@Id", SqlDbType.Int);
@@ -66,6 +71,9 @@ namespace SortApp.BL.DataAdapters
 
 			parameter = adapter.UpdateCommand.Parameters.Add("@Name", SqlDbType.NChar, 255);
 			parameter.SourceColumn = "Name";
+
+			parameter = adapter.UpdateCommand.Parameters.Add("@KindOfSortingAlgorithm", SqlDbType.Int);
+			parameter.SourceColumn = "KindOfSortingAlgorithm";
 
 			//
 			// DeleteCommand.

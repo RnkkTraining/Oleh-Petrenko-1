@@ -36,8 +36,8 @@ namespace SortApp.BL.DataAdapters
 			//
 			// InsertCommand.
 			//
-			SqlCommand cmdInsert = new SqlCommand("INSERT INTO Iteration(ArrayState, IndexOfFirstMovedElement, IndexOfSecondMovedElement, Number, DataId) " +
-												"VALUES(@ArrayState, @IndexOfFirstMovedElement, @IndexOfSecondMovedElement, @Number, @DataId)", connection);
+			SqlCommand cmdInsert = new SqlCommand(@"INSERT INTO Iteration(ArrayState, IndexOfFirstMovedElement, IndexOfSecondMovedElement, Number, DataId) 
+													VALUES(@ArrayState, @IndexOfFirstMovedElement, @IndexOfSecondMovedElement, @Number, @DataId)", connection);
 			adapter.InsertCommand = cmdInsert;
 
 			parameter = adapter.InsertCommand.Parameters.Add("@ArrayState", SqlDbType.Text);

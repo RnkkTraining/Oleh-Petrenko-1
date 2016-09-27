@@ -49,6 +49,84 @@
         <member name="M:SortApp.BL.ArrayGenerators.Fakes.StubIArrayGenerator`1.SortApp#BL#ArrayGenerators#IArrayGenerator{T}#GenerateFromString(System.String)">
             <summary>Sets the stub of IArrayGenerator`1.GenerateFromString(String arr)</summary>
         </member>
+        <member name="T:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData">
+            <summary>Shim type of SortApp.BL.DataAdapters.CreatorDataAdapterData</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.#ctor(SortApp.BL.DataAdapters.CreatorDataAdapterData)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.AllInstances.CreateAdapterSqlConnection">
+            <summary>Sets the shim of CreatorDataAdapterData.CreateAdapter(SqlConnection connection)</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.Bind(SortApp.BL.DataAdapters.IDataAdapterCreator)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.Constructor">
+            <summary>Sets the shim of CreatorDataAdapterData.CreatorDataAdapterData()</summary>
+        </member>
+        <member name="P:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterData.CreateAdapterSqlConnection">
+            <summary>Sets the shim of CreatorDataAdapterData.CreateAdapter(SqlConnection connection)</summary>
+        </member>
+        <member name="T:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration">
+            <summary>Shim type of SortApp.BL.DataAdapters.CreatorDataAdapterIteration</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.#ctor(SortApp.BL.DataAdapters.CreatorDataAdapterIteration)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.AllInstances.CreateAdapterSqlConnection">
+            <summary>Sets the shim of CreatorDataAdapterIteration.CreateAdapter(SqlConnection connection)</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.Bind(SortApp.BL.DataAdapters.IDataAdapterCreator)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.Constructor">
+            <summary>Sets the shim of CreatorDataAdapterIteration.CreatorDataAdapterIteration()</summary>
+        </member>
+        <member name="P:SortApp.BL.DataAdapters.Fakes.ShimCreatorDataAdapterIteration.CreateAdapterSqlConnection">
+            <summary>Sets the shim of CreatorDataAdapterIteration.CreateAdapter(SqlConnection connection)</summary>
+        </member>
+        <member name="T:SortApp.BL.DataAdapters.Fakes.StubIDataAdapterCreator">
+            <summary>Stub type of SortApp.BL.DataAdapters.IDataAdapterCreator</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.StubIDataAdapterCreator.#ctor">
+            <summary>Initializes a new instance of type StubIDataAdapterCreator</summary>
+        </member>
+        <member name="F:SortApp.BL.DataAdapters.Fakes.StubIDataAdapterCreator.CreateAdapterSqlConnection">
+            <summary>Sets the stub of IDataAdapterCreator.CreateAdapter(SqlConnection connection)</summary>
+        </member>
+        <member name="M:SortApp.BL.DataAdapters.Fakes.StubIDataAdapterCreator.SortApp#BL#DataAdapters#IDataAdapterCreator#CreateAdapter(System.Data.SqlClient.SqlConnection)">
+            <summary>Sets the stub of IDataAdapterCreator.CreateAdapter(SqlConnection connection)</summary>
+        </member>
         <member name="T:SortApp.BL.Fakes.ShimData">
             <summary>Shim type of SortApp.BL.Data</summary>
         </member>
@@ -72,6 +150,12 @@
         </member>
         <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.IterationsSetListOfIteration">
             <summary>Sets the shim of Data.set_Iterations(List`1&lt;Iteration&gt; value)</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.KindOfSortingAlgorithmGet">
+            <summary>Sets the shim of Data.get_KindOfSortingAlgorithm()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.KindOfSortingAlgorithmSetSortingAlgorithmKind">
+            <summary>Sets the shim of Data.set_KindOfSortingAlgorithm(SortingAlgorithmKind value)</summary>
         </member>
         <member name="P:SortApp.BL.Fakes.ShimData.AllInstances.NameGet">
             <summary>Sets the shim of Data.get_Name()</summary>
@@ -115,6 +199,12 @@
         <member name="P:SortApp.BL.Fakes.ShimData.IterationsSetListOfIteration">
             <summary>Sets the shim of Data.set_Iterations(List`1&lt;Iteration&gt; value)</summary>
         </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.KindOfSortingAlgorithmGet">
+            <summary>Sets the shim of Data.get_KindOfSortingAlgorithm()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimData.KindOfSortingAlgorithmSetSortingAlgorithmKind">
+            <summary>Sets the shim of Data.set_KindOfSortingAlgorithm(SortingAlgorithmKind value)</summary>
+        </member>
         <member name="P:SortApp.BL.Fakes.ShimData.NameGet">
             <summary>Sets the shim of Data.get_Name()</summary>
         </member>
@@ -132,6 +222,36 @@
         </member>
         <member name="P:SortApp.BL.Fakes.ShimData.SortedDataSetString">
             <summary>Sets the shim of Data.set_SortedData(String value)</summary>
+        </member>
+        <member name="T:SortApp.BL.Fakes.ShimDataAdapterFacroty">
+            <summary>Shim type of SortApp.BL.DataAdapterFacroty</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimDataAdapterFacroty.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimDataAdapterFacroty.#ctor(SortApp.BL.DataAdapterFacroty)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:SortApp.BL.Fakes.ShimDataAdapterFacroty.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimDataAdapterFacroty.AllInstances.CreateAdapterDataAdapterKindEnum">
+            <summary>Sets the shim of DataAdapterFacroty.CreateAdapter(DataAdapterKindEnum dataAdapterKind)</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimDataAdapterFacroty.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SortApp.BL.Fakes.ShimDataAdapterFacroty.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimDataAdapterFacroty.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimDataAdapterFacroty.Constructor">
+            <summary>Sets the shim of DataAdapterFacroty.DataAdapterFacroty()</summary>
+        </member>
+        <member name="P:SortApp.BL.Fakes.ShimDataAdapterFacroty.CreateAdapterDataAdapterKindEnum">
+            <summary>Sets the shim of DataAdapterFacroty.CreateAdapter(DataAdapterKindEnum dataAdapterKind)</summary>
         </member>
         <member name="T:SortApp.BL.Fakes.ShimFileReader">
             <summary>Shim type of SortApp.BL.FileReader</summary>
@@ -373,14 +493,11 @@
         <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.CreateData">
             <summary>Sets the shim of DataRepository.Create(Data item)</summary>
         </member>
-        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.CreateDataAdapter">
-            <summary>Sets the shim of DataRepository.CreateDataAdapter()</summary>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.CreateDataAdapterDataAdapterKindEnum">
+            <summary>Sets the shim of DataRepository.CreateDataAdapter(DataAdapterKindEnum kindOfDataAdapter)</summary>
         </member>
         <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.CreateDataFromDataRowDataRowDataRowCollection">
             <summary>Sets the shim of DataRepository.CreateDataFromDataRow(DataRow row, DataRowCollection iterationRows)</summary>
-        </member>
-        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.CreateIterationAdapter">
-            <summary>Sets the shim of DataRepository.CreateIterationAdapter()</summary>
         </member>
         <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.AllInstances.DeleteData">
             <summary>Sets the shim of DataRepository.Delete(Data item)</summary>
@@ -418,14 +535,11 @@
         <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.CreateData">
             <summary>Sets the shim of DataRepository.Create(Data item)</summary>
         </member>
-        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.CreateDataAdapter">
-            <summary>Sets the shim of DataRepository.CreateDataAdapter()</summary>
+        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.CreateDataAdapterDataAdapterKindEnum">
+            <summary>Sets the shim of DataRepository.CreateDataAdapter(DataAdapterKindEnum kindOfDataAdapter)</summary>
         </member>
         <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.CreateDataFromDataRowDataRowDataRowCollection">
             <summary>Sets the shim of DataRepository.CreateDataFromDataRow(DataRow row, DataRowCollection iterationRows)</summary>
-        </member>
-        <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.CreateIterationAdapter">
-            <summary>Sets the shim of DataRepository.CreateIterationAdapter()</summary>
         </member>
         <member name="P:SortApp.BL.Repository.Fakes.ShimDataRepository.DeleteData">
             <summary>Sets the shim of DataRepository.Delete(Data item)</summary>

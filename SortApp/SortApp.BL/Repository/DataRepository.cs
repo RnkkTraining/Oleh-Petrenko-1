@@ -58,6 +58,7 @@ namespace SortApp.BL.Repository
 			newRowData["OriginalData"] = item.OriginalData;
 			newRowData["SortedData"] = (object)item.SortedData ?? DBNull.Value;
 			newRowData["Name"] = (object)item.Name ?? DBNull.Value;
+			newRowData["KindOfSortingAlgorithm"] = item.KindOfSortingAlgorithm;
 			this.dataSet.Tables["Data"].Rows.Add(newRowData);
 
 			this.adapterData.Update(this.dataSet, "Data");
@@ -119,6 +120,7 @@ namespace SortApp.BL.Repository
 				OriginalData = (string)row["OriginalData"],
 				SortedData = row["SortedData"] != DBNull.Value ? (string)row["SortedData"] : null,
 				Name = row["Name"] != DBNull.Value ? (string)row["Name"] : null,
+				KindOfSortingAlgorithm = (SortingAlgorithmKind)Enum.Parse(typeof(SortingAlgorithmKind), ((int)row["KindOfSortingAlgorithm"]).ToString()),
 				Iterations = new List<Iteration>(iterationRows.Count)
 			};
 

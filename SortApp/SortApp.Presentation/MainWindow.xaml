@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SortApp.Presentation"
         mc:Ignorable="d"
-        Title="SortApp" Height="350" Width="525">
+        Title="SortApp" Height="400" Width="600"
+        Icon="Resources/Icon.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="75"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="35"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="File">
@@ -47,7 +49,7 @@
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
             <Label x:Name="AlgorithmLabel" Content="Algorithm:" Grid.Column="0"/>
-            <ComboBox x:Name="AlgorithmsComboBox" ItemsSource="{Binding SortingAlgorithmSelection}" SelectedValue="{Binding SelectedAlgorithm}" 
+            <ComboBox x:Name="AlgorithmsComboBox" ItemsSource="{Binding SortingAlgorithmSelection}" SelectedValue="{Binding SelectedAlgorithm}"  
                       Grid.Column="1" DisplayMemberPath="Key" SelectedValuePath="Value" VerticalContentAlignment="Center"/>
             <Button x:Name="SortButton" Content="SORT" Margin="0 0 5 0" Grid.Column="3" Command="{Binding ClickCommandSort}"/>
         </Grid>
@@ -67,5 +69,6 @@
                 <DataGridTextColumn Header="Iteration" Width="*" Binding="{Binding ArrayState}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Label x:Name="SortingTimeLabel" Content="{Binding SortingTime}" VerticalContentAlignment="Center" Grid.Row="6"/>
     </Grid>
 </Window>

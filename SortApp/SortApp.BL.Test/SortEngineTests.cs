@@ -26,7 +26,7 @@ namespace SortApp.BL.Test
 			{
 				GenerateFromStringString = (s) => new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }
 			};
-
+			
 			SortEngine<int> sortEngine = new SortEngine<int>(arrayGenerator);
 			string result = sortEngine.Sort(incoming, new StubSorter<int>());
 
