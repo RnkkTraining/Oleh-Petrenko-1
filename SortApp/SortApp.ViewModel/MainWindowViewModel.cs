@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Windows.Forms;
 using System.Windows.Input;
 using SortApp.BL;
@@ -53,6 +54,12 @@ namespace SortApp.ViewModel
 		/// </summary>
 		/// <owner>Oleh Petrenko</owner>
 		private readonly SorterFactory<int> sorterFactory;
+
+		/// <summary>
+		/// Contains stopwatch object.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		private readonly Stopwatch stopwatch;
 
 		/// <summary>
 		/// Contains concrete implementation of validator for incoming string.
@@ -188,6 +195,7 @@ namespace SortApp.ViewModel
 
 			this.OriginalData = loadWindowViewModel.SelectedData.OriginalData;
 			this.ResultSorting = loadWindowViewModel.SelectedData.SortedData;
+			this.SortingTime = loadWindowViewModel.SelectedData.SortingTime;
 			this.SelectedAlgorithm = loadWindowViewModel.SelectedData.KindOfSortingAlgorithm;
 			this.Iterations = loadWindowViewModel.SelectedData.Iterations;
 		}
@@ -221,10 +229,17 @@ namespace SortApp.ViewModel
 			if (!this.CheckIncomingArray())
 				return;
 
+			this.stopwatch.Start();
+
 			Sorter<int> sorter = sorterFactory.CreateSorter(this.SelectedAlgorithm);
 
 			this.ResultSorting = sortEngine.Sort(this.OriginalData, sorter);
+
 			this.Iterations = sorter.Iterations;
+
+			this.stopwatch.Stop();
+			this.SortingTime = stopwatch.Elapsed.ToString();
+			this.stopwatch.Reset();
 		}
 
 		/// <summary>
@@ -271,6 +286,8 @@ namespace SortApp.ViewModel
 			this.messageBoxProvider = messageBoxProvider;
 			this.saveArrayService = saveArrayService;
 			this.loadArrayService = loadArrayService;
+
+			this.stopwatch = new Stopwatch();
 
 			this.repository = new DataRepository();
 
@@ -340,7 +357,7 @@ namespace SortApp.ViewModel
 			get
 			{
 				return this.Data.KindOfSortingAlgorithm;
-				
+
 			}
 			set
 			{
@@ -360,6 +377,26 @@ namespace SortApp.ViewModel
 		{
 			get;
 			private set;
+		}
+
+		/// <summary>
+		/// Gets or sets the sorting time as string.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The sorting time as string.
+		/// </value>
+		public string SortingTime
+		{
+			get
+			{
+				return $"Sorting time: {this.Data.SortingTime}";
+			}
+			set
+			{
+				this.Data.SortingTime = value;
+				this.OnPropertyChanged();
+			}
 		}
 	}
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SortApp.Presentation"
         mc:Ignorable="d"
-        Title="SortApp" Height="350" Width="525"
+        Title="SortApp" Height="400" Width="600"
         Icon="Resources/Icon.ico">
     <Grid>
         <Grid.RowDefinitions>
@@ -15,6 +15,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="35"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="File">
@@ -68,5 +69,6 @@
                 <DataGridTextColumn Header="Iteration" Width="*" Binding="{Binding ArrayState}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Label x:Name="SortingTimeLabel" Content="{Binding SortingTime}" VerticalContentAlignment="Center" Grid.Row="6"/>
     </Grid>
 </Window>

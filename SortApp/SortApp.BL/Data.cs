@@ -86,5 +86,18 @@ namespace SortApp.BL
 			get;
 			set;
 		}
+
+		/// <summary>
+		/// Gets or sets the sorting time as string.
+		/// </summary>
+		/// <owner>Oleh Petrenko</owner>
+		/// <value>
+		/// The sorting time as string.
+		/// </value>
+		public string SortingTime
+		{
+			get;
+			set;
+		}
 	}
 }
