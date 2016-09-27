@@ -357,7 +357,6 @@ namespace SortApp.ViewModel
 			get
 			{
 				return this.Data.KindOfSortingAlgorithm;
-
 			}
 			set
 			{
